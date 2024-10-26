@@ -1,8 +1,7 @@
-// app/page.tsx
 import React from "react";
 
 const page = () => {
-  return <div className="body">Homepage</div>;
+  return <div>AboutPage</div>;
 };
 
 export default page;
