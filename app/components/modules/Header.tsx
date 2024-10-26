@@ -1,7 +1,5 @@
 // components/Header.js
 "use client";
-// components/Header.js
-// components/Header.js
 
 import { useState } from "react";
 import Link from "next/link";
@@ -11,23 +9,22 @@ const Header = () => {
   const [expanded, setExpanded] = useState(false);
 
   const handleToggle = () => {
-    setExpanded(expanded ? false : "expanded");
+    setExpanded((prevExpanded) => !prevExpanded); // Toggle between true and false
   };
 
   const closeMenu = () => {
-    setExpanded(false);
+    setExpanded(false); // Set to false when closing the menu
   };
 
   return (
-    <div className="">
-      {" "}
+    <div>
       {/* Add padding to the header */}
       <Navbar
         expanded={expanded}
         expand="lg"
         bg="light"
         variant="light"
-        className=" Nav shadow p-3"
+        className="Nav shadow p-3"
       >
         <Link href="/" className="navbar-brand">
           My Website
