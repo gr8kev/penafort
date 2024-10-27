@@ -11,3 +11,10 @@
 html {
   scroll-behavior: smooth;
 }
+.links a {
+  color: #b63234;
+}
+.btn {
+  border: 1px solid #b63234 !important ;
+  padding: 5px 20px !important;
+}
