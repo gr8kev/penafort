@@ -15,10 +15,8 @@ html {
   color: #b63234 !important;
 }
 .btn {
-  border: 1px solid;
+  border: 1px solid #b63234 !important;
   padding: 0.5rem 2rem !important;
-  align-items: center;
-  justify-content: center;
 }
 
 .navbar-toggler {
