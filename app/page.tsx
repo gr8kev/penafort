@@ -1,11 +1,11 @@
 // app/page.tsx
 import React from "react";
-import Hero from "./components/modules/homeModules/Hero";
+import Home from "./components/modules/homeModules/Home";
 
 const page = () => {
   return (
     <div className="body">
-      <Hero />
+      <Home />
     </div>
   );
 };
