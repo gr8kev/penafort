@@ -3,6 +3,7 @@ import "./styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Header } from "./components/modules/Header";
 import Head from "next/head"; // Import the Head component
+import Footer from "./components/Footer";
 
 export default function RootLayout({
   children,
@@ -17,6 +18,8 @@ export default function RootLayout({
       <body>
         <Header />
         {children}
+
+        <Footer/>
       </body>
     </html>
   );
