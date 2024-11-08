@@ -1,6 +1,7 @@
 "use client";
 import "./styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { Header } from "./components/modules/Header";
 import Head from "next/head"; // Import the Head component
 
