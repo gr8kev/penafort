@@ -1,6 +1,6 @@
 // app/page.tsx
+import Home from "@/components/modules/homeModules/Home";
 import React from "react";
-import Home from "./components/modules/homeModules/Home";
 
 const page = () => {
   return (

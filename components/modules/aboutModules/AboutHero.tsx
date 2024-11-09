@@ -1,5 +1,7 @@
 import React from "react";
 
-export const AboutHero = () => {
+const AboutHero = () => {
   return <div>AboutHero</div>;
 };
+
+export default AboutHero;

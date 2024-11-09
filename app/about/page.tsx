@@ -1,5 +1,5 @@
+import AboutHero from "@/components/modules/aboutModules/AboutHero";
 import React from "react";
-import { AboutHero } from "../components/modules/aboutModules/AboutHero";
 
 const page = () => {
   return (
