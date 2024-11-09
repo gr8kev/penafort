@@ -1,4 +1,4 @@
-import Home from "@/components/modules/loginModule/Home";
+import Home from "@/components/modules/loginModules/Home";
 import React from "react";
 
 const page = () => {
