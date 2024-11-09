@@ -24,17 +24,6 @@ export const Header = () => {
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/about">About</Nav.Link>
               <Nav.Link href="/brands">Brands</Nav.Link>
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item href="/action">Action</NavDropdown.Item>
-                <NavDropdown.Item href="/another">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Item href="/something">Something</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="/separated">
-                  Separated link
-                </NavDropdown.Item>
-              </NavDropdown>
               <Nav.Link href="/contact">Contact</Nav.Link>
               <Nav.Link href="login" className="btn">
                 Login
