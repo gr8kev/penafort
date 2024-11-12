@@ -1,10 +1,9 @@
 "use client";
 import { Header } from "@/components/Header";
 import "./styles/globals.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import "bootstrap/dist/css/bootstrap.min.css"; // Bootstrap CSS
 import Footer from "@/components/Footer";
-
+import BootstrapJS from "@/components/BootstrapJS";
 export default function RootLayout({
   children,
 }: {
@@ -16,6 +15,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <BootstrapJS />
       </body>
     </html>
   );

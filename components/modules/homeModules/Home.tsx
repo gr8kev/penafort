@@ -1,65 +1,74 @@
+"use client"; // Mark this component as a client-side component
+
 import React from "react";
-import Image from "next/image";
+import Image from "next/image"; // Import Next.js Image component
 
 const Home = () => {
   return (
     <div className="mt-24">
+      {" "}
       <div
-        id="carouselExampleAutoplaying"
-        className="carousel slide"
+        id="carouselExampleFade"
+        className="carousel slide carousel slide"
         data-bs-ride="carousel"
       >
         <div className="carousel-inner">
           <div className="carousel-item active">
             <Image
               src="/images/wineBanner1.png"
-              alt="First slide"
+              alt="Slide 1"
               className="d-block w-100"
-              width={500}
+              layout="responsive"
+              width={1200}
               height={500}
             />
           </div>
           <div className="carousel-item">
             <Image
               src="/images/wineBanner2.png"
-              alt="Second slide"
+              alt="Slide 2"
               className="d-block w-100"
-              width={500}
+              layout="responsive"
+              width={1200}
               height={500}
             />
           </div>
           <div className="carousel-item">
             <Image
               src="/images/wineBanner3.png"
-              alt="Second slide"
+              alt="Slide 3"
               className="d-block w-100"
-              width={500}
+              layout="responsive"
+              width={1200}
               height={500}
             />
           </div>
           <div className="carousel-item">
             <Image
               src="/images/wineBanner4.png"
-              alt="Second slide"
+              alt="Slide 4"
               className="d-block w-100"
-              width={500}
+              layout="responsive"
+              width={1200}
               height={500}
             />
           </div>
           <div className="carousel-item">
             <Image
               src="/images/wineBanner5.png"
-              alt="Second slide"
+              alt="Slide 5"
               className="d-block w-100"
-              width={500}
+              layout="responsive"
+              width={1200}
               height={500}
             />
           </div>
         </div>
+
         <button
           className="carousel-control-prev"
           type="button"
-          data-bs-target="#carouselExampleAutoplaying"
+          data-bs-target="#carouselExampleFade"
           data-bs-slide="prev"
         >
           <span
@@ -71,7 +80,7 @@ const Home = () => {
         <button
           className="carousel-control-next"
           type="button"
-          data-bs-target="#carouselExampleAutoplaying"
+          data-bs-target="#carouselExampleFade"
           data-bs-slide="next"
         >
           <span
