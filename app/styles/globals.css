@@ -11,37 +11,37 @@
 .banner {
   background-image: url("/images/banner.png");
   background-position: center;
-  background-size: contain; 
+  background-size: contain;
   background-repeat: no-repeat;
   width: 100%;
-  height: 100vh; 
+  height: 100vh;
   background-color: #151414;
 }
 
-@media (max-width: 1024px) {
-  .banner {
-    background-size: cover; 
-    height: 35vh; 
-  }
-}
-
-@media (max-width: 991px) {
+@media screen and (max-width: 1024px) {
   .banner {
     background-size: cover;
-    height: 35vh; 
+    height: 35vh;
   }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 991px) {
   .banner {
-    background-size: cover; 
-    height: 35vh; 
+    background-size: cover;
+    height: 35vh;
   }
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 768px) {
   .banner {
-    height: 30vh; /
+    background-size: cover;
+    height: 35vh;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .banner {
+    height: 30vh;
   }
 }
 
