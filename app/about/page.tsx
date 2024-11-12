@@ -1,4 +1,4 @@
-import About from "@/components/modules/AboutModules/about";
+import About from "@/components/modules/AboutModules/About";
 import React from "react";
 
 const page = () => {

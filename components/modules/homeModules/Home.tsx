@@ -5,7 +5,7 @@ import Image from "next/image"; // Import Next.js Image component
 
 const Home = () => {
   return (
-    <div className="mt-24">
+    <div className="mt-24 wrapper">
       {" "}
       <div
         id="carouselExampleFade"
