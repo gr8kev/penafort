@@ -4,6 +4,8 @@ import "./styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css"; // Bootstrap CSS
 import Footer from "@/components/Footer";
 import BootstrapJS from "@/components/BootstrapJS";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
 export default function RootLayout({
   children,
 }: {

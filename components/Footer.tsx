@@ -60,13 +60,19 @@ const Footer = () => {
                 <div className="footer-social-icon">
                   <span>Follow us</span>
                   <Link href="#">
-                    <i className="fab fa-facebook-f facebook-bg"></i>
+                    <i className="fab fa-facebook-f "></i>
                   </Link>
                   <Link href="#">
-                    <i className="fab fa-twitter twitter-bg"></i>
+                    <i className="fab fa-twitter "></i>
                   </Link>
                   <Link href="#">
-                    <i className="fab fa-google-plus-g google-bg"></i>
+                    <i className="fab fa-google-plus-g"></i>
+                  </Link>
+                  <Link href="#">
+                    <i className="fab fa-instagram instagram-bg"></i>
+                  </Link>
+                  <Link href="#">
+                    <i className="fab fa-linkedin linkedin-bg"></i>
                   </Link>
                 </div>
               </div>
