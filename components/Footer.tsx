@@ -12,7 +12,7 @@ const Footer = () => {
                 <i className="fas fa-map-marker-alt"></i>
                 <div className="cta-text">
                   <h4>Find us</h4>
-                  <span>1010 Avenue, sw 54321, chandigarh</span>
+                  <span>Lasu Ojo Road, Lagos</span>
                 </div>
               </div>
             </div>
@@ -21,7 +21,7 @@ const Footer = () => {
                 <i className="fas fa-phone"></i>
                 <div className="cta-text">
                   <h4>Call us</h4>
-                  <span>9876543210 0</span>
+                  <span>+2347081400924</span>
                 </div>
               </div>
             </div>
