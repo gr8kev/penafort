@@ -1,11 +1,14 @@
 // app/page.tsx
+
+import { Banner } from "@/components/modules/homeModules/Banner";
+import Home from "@/components/modules/homeModules/Home";
 import React from "react";
-import Home from "./components/modules/homeModules/Home";
 
 const page = () => {
   return (
     <div className="body">
       <Home />
+      <Banner />
     </div>
   );
 };

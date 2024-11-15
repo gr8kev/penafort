@@ -1,10 +1,11 @@
-import About from "@/components/modules/AboutModules/About";
+
+import Brands from "@/components/modules/brandsModules/Brands";
 import React from "react";
 
 const page = () => {
   return (
     <div>
-      <About />
+     <Brands/>
     </div>
   );
 };

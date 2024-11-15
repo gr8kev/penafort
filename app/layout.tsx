@@ -1,9 +1,10 @@
 "use client";
+import { Header } from "@/components/Header";
 import "./styles/globals.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Header } from "./components/modules/Header";
-import Head from "next/head"; // Import the Head component
-import Footer from "./components/Footer";
+import "bootstrap/dist/css/bootstrap.min.css"; // Bootstrap CSS
+import Footer from "@/components/Footer";
+import BootstrapJS from "@/components/BootstrapJS";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 export default function RootLayout({
   children,
@@ -12,14 +13,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
-        <link rel="icon" href="/images/logo.svg" type="image/png" />
-      </Head>
       <body>
         <Header />
         {children}
-
-        <Footer/>
+        <Footer />
+        <BootstrapJS />
       </body>
     </html>
   );
