@@ -7,107 +7,69 @@ interface Product {
   name: string;
   image: string;
   description: string;
-  supermarketPrice: string;
-  tradeFairPerBottle: string;
-  tradeFairCartonPrice: string;
+  price: string; // Updated to a single price field
 }
 
 const brands = [
   {
     name: "Codorniu",
     description: "Rich and smooth taste from aged barrels.",
-    supermarketPrice: "4800",
-    tradeFairPerBottle: "4500",
-    tradeFairCartonPrice: "4000 * 12 = 48000",
+    price: "₦4,800",
   },
   {
-    name: " Codorniu Vintage Brut",
+    name: "Codorniu Vintage Brut",
     description: "A premium drink for special moments.",
-    supermarketPrice: "10,400",
-    tradeFairPerBottle: "9,500",
-    tradeFairCartonPrice: "8000 * 6 = 48,000",
+    price: "₦10,400",
   },
   {
     name: "Anna de Codorniu Brut Blanc",
     description: "Bold flavors with a hint of agave.",
-    supermarketPrice: "22,100",
-    tradeFairPerBottle: "sell:19,000, remit:18,000",
-    tradeFairCartonPrice: "17,000 * 6 = 102,000",
+    price: "₦22,100",
   },
   {
     name: "Anna de Codorniu Brut Rose",
     description: "Refreshing and delightful for any occasion.",
-    supermarketPrice: "22,100",
-    tradeFairPerBottle: "sell:19,000, remit:18,000",
-    tradeFairCartonPrice: "17,000 * 6 = 102,000",
+    price: "₦22,100",
   },
   {
     name: "Calmo-legaris-Vine De",
     description: "Crisp and fruity, perfect for celebrations.",
-    supermarketPrice: "113,750",
-    tradeFairPerBottle: "sell:102,000 remit:100,000",
-    tradeFairCartonPrice: "87,500 * 3 = 262,500",
+    price: "₦113,750",
   },
   {
     name: "Bach Rose (can)",
     description: "Crisp and fruity, perfect for celebrations.",
-    supermarketPrice: "4,800",
-    tradeFairPerBottle: "4,500",
-    tradeFairCartonPrice: "4,000 * 12 = 48,000",
+    price: "₦4,800",
   },
-
-  {
-    name: "Bach Rose (can)",
-    description: "Crisp and fruity, perfect for celebrations.",
-    supermarketPrice: "4,800",
-    tradeFairPerBottle: "4,500",
-    tradeFairCartonPrice: "4,000 * 12 = 48,000",
-  },
-
   {
     name: "Nuviana brut",
     description: "Crisp and fruity, perfect for celebrations.",
-    supermarketPrice: "7,800",
-    tradeFairPerBottle: "7,500",
-    tradeFairCartonPrice: "6000 * 6 = 36,000",
+    price: "₦7,800",
   },
   {
     name: "Brut Rose Mont-ferrant",
     description: "Crisp and fruity, perfect for celebrations.",
-    supermarketPrice: "10,400",
-    tradeFairPerBottle: "9,500",
-    tradeFairCartonPrice: "8000 * 6 = 48,000",
+    price: "₦10,400",
   },
   {
     name: "Parxet Brut Rose",
     description: "Crisp and fruity, perfect for celebrations.",
-    supermarketPrice: "11,700",
-    tradeFairPerBottle: "sell:10,500 remit:10,000",
-    tradeFairCartonPrice: "9,000 * 6 = 54,000",
+    price: "₦11,700",
   },
-
   {
     name: "La Vicalanda Reserva 2016",
     description: "Crisp and fruity, perfect for celebrations.",
-    supermarketPrice: "24,050",
-    tradeFairPerBottle: "sell:20,500 remit:19,500",
-    tradeFairCartonPrice: "18,500 * 6 = 111,000",
+    price: "₦24,050",
   },
-
   {
     name: "Finca El Rubio",
     description: "Crisp and fruity, perfect for celebrations.",
-    supermarketPrice: "32,500",
-    tradeFairPerBottle: "sell:31,000 remit:30,000",
-    tradeFairCartonPrice: "29,500 * 6 = 154,000",
+    price: "₦32,500",
   },
-
   {
     name: "Royal Carlton Brut",
     description: "Crisp and fruity, perfect for celebrations.",
-    supermarketPrice: "14,950",
-    tradeFairPerBottle: "13,000",
-    tradeFairCartonPrice: "11,500 * 6 = 69,000",
+    price: "₦14,950",
   },
 ];
 
@@ -131,12 +93,10 @@ const products: Product[] = Array.from({ length: 25 }, (_, index) => {
   const brand = brands[index % brands.length];
   return {
     brand: brand.name,
-    name: brand.name, // Corrected here
+    name: brand.name,
     image: images[index % images.length],
     description: brand.description,
-    supermarketPrice: brand.supermarketPrice,
-    tradeFairPerBottle: brand.tradeFairPerBottle,
-    tradeFairCartonPrice: brand.tradeFairCartonPrice,
+    price: brand.price,
   };
 });
 
@@ -222,20 +182,13 @@ const Brands: React.FC = () => {
             />
             <div className="product-info">
               <h4 className="product-name">{product.name}</h4>
-              <p className="product-price">
-                Supermarket Price: #{product.supermarketPrice}
-              </p>
-              <p className="product-price">
-                Trade Fair Price: #{product.tradeFairPerBottle}
-              </p>
-              <p className="product-price">
-                Trade Fair Carton Price: #{product.tradeFairCartonPrice}
-              </p>
+              <p className="product-price">{product.price}</p>
             </div>
             <div className="product-description">
-              {/* Description will still slide up on hover */}
               <p>{product.description}</p>
             </div>
+            {/* Add to Cart Button */}
+            <button className="add-to-cart-btn">Add to Cart</button>
           </div>
         ))}
       </div>

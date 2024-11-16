@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+
 * {
   margin: 0;
   padding: 0;
@@ -323,3 +326,6 @@ ul {
   color: #e74c3c;
   margin: 10px 0;
 }
+
+
+
