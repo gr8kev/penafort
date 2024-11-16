@@ -27,7 +27,7 @@ const Home: React.FC = () => {
   return (
     <div>
       {/* Carousel Section */}
-      <div className="mt-24 wrapper">
+      <div className="mt-24 wrapper bg-black">
         <div
           id="carouselExampleFade"
           className="carousel slide carousel slide"
