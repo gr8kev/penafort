@@ -136,15 +136,21 @@ const Home: React.FC = () => {
         ))}
       </div>
 
-      {/* See More Button */}
-      <div className="see-more-container">
-        <Link
-          href="/brands"
-          className="see-more-button flex justify-end mr-7 mb-10"
-        >
-          See More
-        </Link>
-      </div>
+{/* See More Button */}
+<div className="see-more-container">
+  <Link
+    href="/brands"
+    className="see-more-button flex justify-end mr-7 mt-1 no-underline mb-1"
+  >
+    <button className="py-1 px-4 bg-gradient-to-r from-red-300 to-red-600 text-white font-bold rounded-lg shadow-xl hover:from-red-600 hover:to-red-800 transition-all duration-300 ease-in-out transform hover:scale-110 focus:outline-none">
+      See More
+    </button>
+  </Link>
+</div>
+
+
+
+
     </div>
   );
 };
