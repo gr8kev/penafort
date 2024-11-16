@@ -152,7 +152,7 @@ const Footer = () => {
                     <Link href="#">Contact</Link>
                   </li>
                   <li>
-                    <Link href="#">Brands</Link>
+                    <Link href="/brands">Brands</Link>
                   </li>
                 </ul>
               </div>
