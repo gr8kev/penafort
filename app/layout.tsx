@@ -17,7 +17,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
-        <BootstrapJS />
+         <BootstrapJS />
       </body>
     </html>
   );

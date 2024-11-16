@@ -1,0 +1,83 @@
+/* Wrapper for full height */
+.wrapper {
+    height: 100%;
+}
+
+/* Product grid with 5 columns */
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+/* Product card styling */
+.product-card {
+    position: relative; /* Necessary for the absolute positioning of the description */
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect for product card */
+.product-card:hover {
+    transform: translateY(-10px); /* Adds a slight lift effect on hover */
+}
+
+/* Product image styling */
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Product info (name and brand) */
+.product-info {
+    padding: 1rem;
+    font-size: 14px;
+}
+
+.product-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.product-brand {
+    font-size: 14px;
+    color: #555; /* Subtle color for the brand */
+}
+
+/* Prices styling (always visible) */
+.product-price,
+.product-prices {
+    font-size: 10px;
+    color: #8B0000; /* Dark red color for all prices */
+    margin-top: 0.5rem;
+}
+
+/* Hidden description with hover effect */
+.product-description {
+    position: absolute;
+    top: 100%; /* Initially hidden below the card */
+    left: 0;
+    right: 0;
+    font-size: 14px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    padding: 1rem;
+    opacity: 0;
+    transition: all 0.3s ease-in-out; /* Smooth transition for sliding up */
+}
+
+/* When hovering, description slides up and becomes visible */
+.product-card:hover .product-description {
+    top: 0; /* Moves up to fill the card */
+    opacity: 1; /* Fully visible */
+}
+
+.product-description p {
+    margin: 0.5rem 0;
+}

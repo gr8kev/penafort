@@ -4,6 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Image from "react-bootstrap/Image"; // Import Image from react-bootstrap
 
+
 export const Header = () => {
   return (
     <div>
@@ -31,6 +32,7 @@ export const Header = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+     
     </div>
   );
 };
