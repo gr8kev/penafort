@@ -136,7 +136,7 @@ const Home: React.FC = () => {
           className="rounded-lg"
         />
       </div>
-      <h3 className="product-name mt-2 text-center text-lg font-semibold">
+      <h3 className="product-name mt-2   text-center text-lg font-semibold">
         {product.name}
       </h3>
     </div>
