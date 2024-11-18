@@ -10,13 +10,22 @@ interface Product {
   image: string;
 }
 
+const product = [
+  { id: 1, name: "Product 1", image: "/images/product1.jpg" },
+  { id: 2, name: "Product 2", image: "/images/product2.jpg" },
+];
+
+
+console.log(product);
+
+
 const products: Product[] = [
   { id: 1, name: "Parxet", image: "/images/parxet.jpeg" },
   { id: 2, name: "Nuviana", image: "/images/Nuviana.jpeg" },
   { id: 3, name: "Mont-ferrant", image: "/images/Mont-ferrant.jpeg" },
   { id: 4, name: "La Vicalanda", image: "/images/LaVicalanda.jpeg" },
   { id: 5, name: "Finca El Rubio", image: "/images/FincaElRubio.jpeg" },
-  { id: 6, name: "Cuvée Spéciale", image: "/images/cuveeSpeciale.jpeg" },
+  { id: 6, name: "La Vicalanda Reserva 2016", image: "/images/LAvicalandaReserva.jpeg" },
   { id: 7, name: "Calmo", image: "/images/Calmo.jpeg" },
   { id: 8, name: "Royal Carlton", image: "/images/RoyalCarlton jpeg.jpeg" },
   { id: 9, name: "Vintage Codorniu", image: "/images/VintageCodorniu.jpeg" },
@@ -114,27 +123,30 @@ const Home: React.FC = () => {
       </div>
 
       {/* Products Section */}
-      <div className="product-container grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 p-4 bg-black">
-        {products.map((product) => (
-          <div
-            className="product-card flex flex-col items-center"
-            key={product.id}
-          >
-            <div className="product-image-container relative w-full h-64 bg-gray-100 rounded-lg overflow-hidden">
-              <Image
-                src={product.image}
-                alt={product.name}
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
-              />
-            </div>
-            <h3 className="product-name mt-2 text-center text-lg font-semibold">
-              {product.name}
-            </h3>
-          </div>
-        ))}
+{/* Products Section */}
+<div className="product-container grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 p-4">
+  {products.map((product) => (
+    <div className="product-card flex flex-col items-center" key={product.id}>
+      <div className="product-image-container relative w-full h-[400px] bg-gray-100 rounded-lg overflow-hidden">
+        <Image
+          src={product.image}
+          alt={product.name}
+          layout="fill"
+          objectFit="cover"
+          className="rounded-lg"
+        />
       </div>
+      <h3 className="product-name mt-2 text-center text-lg font-semibold">
+        {product.name}
+      </h3>
+    </div>
+  ))}
+</div>
+
+
+
+
+
 
 {/* See More Button */}
 <div className="see-more-container">

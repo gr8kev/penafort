@@ -42,12 +42,17 @@ const brands = [
     price: "₦4,800",
   },
   {
-    name: "Nuviana brut",
+    name: "Bach Rose (can)",
+    description: "Crisp and fruity, perfect for celebrations.",
+    price: "₦4,800",
+  },
+  {
+    name: "Nuviana Brut",
     description: "Crisp and fruity, perfect for celebrations.",
     price: "₦7,800",
   },
   {
-    name: "Brut Rose Mont-ferrant",
+    name: " Brut Rose Mont-ferrant",
     description: "Crisp and fruity, perfect for celebrations.",
     price: "₦10,400",
   },
@@ -65,11 +70,6 @@ const brands = [
     name: "Finca El Rubio",
     description: "Crisp and fruity, perfect for celebrations.",
     price: "₦32,500",
-  },
-  {
-    name: "Royal Carlton Brut",
-    description: "Crisp and fruity, perfect for celebrations.",
-    price: "₦14,950",
   },
 ];
 
