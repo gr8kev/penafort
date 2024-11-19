@@ -7,7 +7,7 @@ import Image from "react-bootstrap/Image"; // Import Image from react-bootstrap
 export const Header = () => {
   return (
     <div>
-      <Navbar expand="lg" className="bg-[#F5EBDA] fixed-top py-1 ">
+      <Navbar expand="lg" className="bg-[#F5EBDA] fixed-top py-1 new ">
         {" "}
         {/* Reduced padding */}
         <Container>
