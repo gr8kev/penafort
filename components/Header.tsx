@@ -4,11 +4,10 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Image from "react-bootstrap/Image"; // Import Image from react-bootstrap
 
-
 export const Header = () => {
   return (
     <div>
-      <Navbar expand="lg" className="bg-body-tertiary fixed-top py-1 ">
+      <Navbar expand="lg" className="bg-[#F5EBDA] fixed-top py-1 ">
         {" "}
         {/* Reduced padding */}
         <Container>
@@ -32,7 +31,6 @@ export const Header = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-     
     </div>
   );
 };
