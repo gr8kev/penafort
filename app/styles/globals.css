@@ -32,19 +32,6 @@
   }
 }
 
-@media screen and (max-width: 768px) {
-  .banner {
-    background-size: cover;
-    height: 35vh;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .banner {
-    height: 30vh;
-  }
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -84,7 +71,7 @@ ul {
 }
 
 .footer-section {
-  background: #151414;
+  background: #f5ebda;
   position: relative;
 }
 
@@ -106,14 +93,14 @@ ul {
 }
 
 .cta-text h4 {
-  color: #fff;
+  color: #ba2b27;
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 2px;
 }
 
 .cta-text span {
-  color: #757575;
+  color: #bb6500;
   font-size: 15px;
 }
 
@@ -142,12 +129,12 @@ ul {
 .footer-text p {
   margin-bottom: 14px;
   font-size: 14px;
-  color: #7e7e7e;
+  color: #bb6500;
   line-height: 28px;
 }
 
 .footer-social-icon span {
-  color: #fff;
+  color: #bb6500;
   display: block;
   font-size: 20px;
   font-weight: 700;
@@ -182,7 +169,7 @@ ul {
 }
 
 .footer-widget-heading h3 {
-  color: #fff;
+  color: #ba2b27;
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 40px;
@@ -207,7 +194,7 @@ ul {
 }
 
 .footer-widget ul li a {
-  color: #878787;
+  color: #bb6500;
   text-transform: capitalize;
   transition: color 0.3s ease;
 }
@@ -245,18 +232,18 @@ ul {
 }
 
 .copyright-area {
-  background: #202020;
+  background: #f5ebda;
   padding: 25px 0;
 }
 
 .copyright-text p {
   margin: 0;
   font-size: 14px;
-  color: #878787;
+  color: #bb6500;
 }
 
 .copyright-text p a {
-  color: #ff5e14;
+  color: #ba2b27;
   transition: color 0.3s ease;
 }
 
@@ -267,7 +254,7 @@ ul {
 
 .footer-menu li a {
   font-size: 14px;
-  color: #878787;
+  color: #bb6500;
   transition: color 0.3s ease;
 }
 

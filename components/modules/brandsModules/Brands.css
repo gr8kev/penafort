@@ -1,119 +1,119 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
 body {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
 }
 
 /* Wrapper for full height */
 .wrapper {
-    height: 100%;
+  height: 100%;
 }
 
 /* Product grid with 5 columns */
 .product-container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1rem;
-    margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
 }
 
 /* Product card styling */
 .product-card {
-    position: relative;
-    text-align: center;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    background-color: #fff;
-    transition: transform 0.3s ease-in-out;
-    height: 350px; /* Adjusted height of the card */
+  position: relative;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  transition: transform 0.3s ease-in-out;
+  height: 350px; /* Adjusted height of the card */
 }
 
 /* Hover effect for product card */
 .product-card:hover {
-    transform: translateY(-10px);
+  transform: translateY(-10px);
 }
 
 /* Product image styling */
 .product-image {
-    width: 100%;
-    height: 160px; /* Adjusted image height */
-    object-fit: cover; /* Ensures the image fills the area without stretching */
+  width: 100%;
+  height: 160px; /* Adjusted image height */
+  object-fit: cover; /* Ensures the image fills the area without stretching */
 }
 
 /* Product info (name and price) */
 .product-info {
-    padding: 1rem;
-    font-size: 8px;
+  padding: 1rem;
+  font-size: 8px;
 }
 
 .product-name {
-    font-size: 16px;
-    font-weight: bold;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 /* Price styling */
 .product-price {
-    font-size: 16px;
-    color: #8B0000; /* Dark red color for prices */
-    margin-top: 25px;
+  font-size: 16px;
+  color: #8b0000; /* Dark red color for prices */
+  margin-top: 25px;
 }
 
 /* Add to cart button */
 .add-to-cart-btn {
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-    background-color: #e74c3c;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .add-to-cart-btn:hover {
-    background-color: #A52A2A;
+  background-color: #a52a2a;
 }
 
 /* Hidden description with hover effect */
 .product-description {
-    position: absolute;
-    top: 100%; /* Initially hidden below the card */
-    left: 0;
-    right: 0;
-    font-size: 14px;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 1rem;
-    opacity: 0;
-    transition: all 0.3s ease-in-out;
+  position: absolute;
+  top: 100%; /* Initially hidden below the card */
+  left: 0;
+  right: 0;
+  font-size: 14px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
 }
 
 /* When hovering, description slides up and becomes visible */
 .product-card:hover .product-description {
-    top: 0;
-    opacity: 1;
+  top: 0;
+  opacity: 1;
 }
 
 .product-description p {
-    margin: 0.5rem 0;
+  margin: 0.5rem 0;
 }
 
 /* Responsive layout adjustments */
 @media (max-width: 768px) {
-    .product-container {
-        grid-template-columns: 1fr; /* Stack items vertically on small screens */
-    }
+  .product-container {
+    grid-template-columns: 1fr; /* Stack items vertically on small screens */
+  }
 
-    .product-image {
-        height: 300px; /* Adjust the image height for small screens */
-    }
+  .product-image {
+    height: 300px; /* Adjust the image height for small screens */
+  }
 
-    .product-card {
-        height: 400px; /* Adjust card height for small screens */
-    }
+  .product-card {
+    height: 400px; /* Adjust card height for small screens */
+  }
 }

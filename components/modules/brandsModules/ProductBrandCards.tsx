@@ -102,7 +102,7 @@ const products: Product[] = Array.from({ length: 25 }, (_, index) => {
 
 const Brands: React.FC = () => {
   return (
-    <div className="wrapper bg-black">
+    <div className="wrapper bg-black mb-[-32]">
       {/* Carousel Section */}
       <div className="mt-14">
         <div
