@@ -15,7 +15,9 @@ const product = [
   { id: 2, name: "Product 2", image: "/images/product2.jpg" },
 ];
 
+
 console.log(product);
+
 
 const products: Product[] = [
   { id: 1, name: "Parxet", image: "/images/parxet.jpeg" },
@@ -23,11 +25,7 @@ const products: Product[] = [
   { id: 3, name: "Mont-ferrant", image: "/images/Mont-ferrant.jpeg" },
   { id: 4, name: "La Vicalanda", image: "/images/LaVicalanda.jpeg" },
   { id: 5, name: "Finca El Rubio", image: "/images/FincaElRubio.jpeg" },
-  {
-    id: 6,
-    name: "La Vicalanda Reserva 2016",
-    image: "/images/LAvicalandaReserva.jpeg",
-  },
+  { id: 6, name: "La Vicalanda Reserva 2016", image: "/images/LAvicalandaReserva.jpeg" },
   { id: 7, name: "Calmo", image: "/images/Calmo.jpeg" },
   { id: 8, name: "Royal Carlton", image: "/images/RoyalCarlton jpeg.jpeg" },
   { id: 9, name: "Vintage Codorniu", image: "/images/VintageCodorniu.jpeg" },
@@ -38,14 +36,14 @@ const Home: React.FC = () => {
   return (
     <div>
       {/* Carousel Section */}
-      <div className=" mt-14 wrapper bg-black  ">
+      <div className="mt-24 wrapper bg-black">
         <div
           id="carouselExampleFade"
-          className="carousel slide carousel slide "
+          className="carousel slide carousel slide"
           data-bs-ride="carousel"
         >
-          <div className="carousel-inner ">
-            <div className="carousel-item active ">
+          <div className="carousel-inner">
+            <div className="carousel-item active">
               <Image
                 src="/images/wineBanner1.png"
                 alt="Slide 1"
@@ -123,42 +121,51 @@ const Home: React.FC = () => {
           </button>
         </div>
       </div>
-
-      {/* Products Section */}
-      {/* Products Section */}
-      <div className="product-container grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 p-4">
-        {products.map((product) => (
-          <div
-            className="product-card flex flex-col items-center"
-            key={product.id}
-          >
-            <div className="product-image-container relative w-full h-[400px] bg-gray-100 rounded-lg overflow-hidden">
-              <Image
-                src={product.image}
-                alt={product.name}
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
-              />
-            </div>
-            <h3 className="product-name mt-2   text-center text-lg font-semibold">
-              {product.name}
-            </h3>
-          </div>
-        ))}
+     
+{/* Products Section */}
+<div className="product-container grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-5">
+  {products.map((product) => (
+    <div className="product-card flex flex-col items-center" key={product.id}>
+      <div className="product-image-container relative w-full h-[400px] bg-gray-100 rounded-lg overflow-hidden">
+        <Image
+          src={product.image}
+          alt={product.name}
+          layout="fill"
+          objectFit="cover"
+          className="rounded-lg"
+        />
       </div>
+      <h3 className="product-name mt-2 text-center text-lg font-semibold">
+        {product.name}
+      </h3>
+    </div>
+  ))}
+</div>
 
-      {/* See More Button */}
-      <div className="see-more-container">
-        <Link
-          href="/brands"
-          className="see-more-button flex justify-end mr-7 mt-1 no-underline mb-1"
-        >
-          <button className="py-1 px-4 bg-gradient-to-r from-red-300 to-red-600 text-white font-bold rounded-lg shadow-xl hover:from-red-600 hover:to-red-800 transition-all duration-300 ease-in-out transform hover:scale-110 focus:outline-none">
-            See More
-          </button>
-        </Link>
-      </div>
+
+
+
+
+
+
+
+
+
+{/* See More Button */}
+<div className="see-more-container">
+  <Link
+    href="/brands"
+    className="see-more-button flex justify-end mr-7 mt-1 no-underline mb-1"
+  >
+    <button className="py-1 px-4 bg-gradient-to-r from-red-300 to-red-600 text-white font-bold rounded-lg shadow-xl hover:from-red-600 hover:to-red-800 transition-all duration-300 ease-in-out transform hover:scale-110 focus:outline-none">
+      See More
+    </button>
+  </Link>
+</div>
+
+
+
+
     </div>
   );
 };

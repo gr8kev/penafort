@@ -14,62 +14,74 @@ const brands = [
   {
     name: "Codorniu",
     description: "Rich and smooth taste from aged barrels.",
-    price: "₦4,800",
+    price: "₦48,000",
   },
   {
     name: "Codorniu Vintage Brut",
     description: "A premium drink for special moments.",
-    price: "₦10,400",
+    price: "₦48,000",
   },
   {
     name: "Anna de Codorniu Brut Blanc",
     description: "Bold flavors with a hint of agave.",
-    price: "₦22,100",
+    price: "₦102,000",
   },
   {
     name: "Anna de Codorniu Brut Rose",
     description: "Refreshing and delightful for any occasion.",
-    price: "₦22,100",
+    price: "₦102,000",
   },
   {
     name: "Calmo-legaris-Vine De",
     description: "Crisp and fruity, perfect for celebrations.",
-    price: "₦113,750",
+    price: "₦262,500",
   },
   {
     name: "Bach Rose (can)",
     description: "Crisp and fruity, perfect for celebrations.",
-    price: "₦4,800",
+    price: "₦48000",
   },
   {
     name: "Bach Rose (can)",
     description: "Crisp and fruity, perfect for celebrations.",
-    price: "₦4,800",
+    price: "₦48000",
   },
   {
     name: "Nuviana Brut",
     description: "Crisp and fruity, perfect for celebrations.",
-    price: "₦7,800",
+    price: "₦36,000",
   },
   {
     name: " Brut Rose Mont-ferrant",
     description: "Crisp and fruity, perfect for celebrations.",
-    price: "₦10,400",
+    price: "₦48,000",
   },
   {
     name: "Parxet Brut Rose",
     description: "Crisp and fruity, perfect for celebrations.",
-    price: "₦11,700",
+    price: "₦54,000",
   },
   {
     name: "La Vicalanda Reserva 2016",
     description: "Crisp and fruity, perfect for celebrations.",
-    price: "₦24,050",
+    price: "₦111,000",
   },
   {
     name: "Finca El Rubio",
     description: "Crisp and fruity, perfect for celebrations.",
-    price: "₦32,500",
+    price: "₦154,000",
+  },
+
+  {
+    name: "Royal Carlton Brut",
+    description: "Crisp and fruity, perfect for celebrations.",
+    price: "₦69,000",
+  },
+
+  {
+    name: "Calmo-legaris-Vine De",
+    description: "Crisp and fruity, perfect for celebrations.",
+    price: "₦262,500",
   },
 ];
 
@@ -172,7 +184,7 @@ const Brands: React.FC = () => {
       </div>
 
       {/* Products Section */}
-      <div className="product-container">
+      <div className="product-container sm:grid-cols-2">
         {products.map((product, index) => (
           <div className="product-card" key={index}>
             <img
