@@ -38,14 +38,14 @@ const Home: React.FC = () => {
   return (
     <div>
       {/* Carousel Section */}
-      <div className="mt-25 wrapper bg-black">
+      <div className=" mt-14 wrapper bg-black  ">
         <div
           id="carouselExampleFade"
-          className="carousel slide carousel slide"
+          className="carousel slide carousel slide "
           data-bs-ride="carousel"
         >
-          <div className="carousel-inner">
-            <div className="carousel-item active">
+          <div className="carousel-inner ">
+            <div className="carousel-item active ">
               <Image
                 src="/images/wineBanner1.png"
                 alt="Slide 1"

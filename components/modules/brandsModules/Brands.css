@@ -116,4 +116,8 @@ body {
   .product-card {
     height: 400px; /* Adjust card height for small screens */
   }
+
+  .wrapper {
+    margin-top: 24px !important;
+  }
 }
