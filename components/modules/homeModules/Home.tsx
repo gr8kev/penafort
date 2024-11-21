@@ -23,7 +23,7 @@ const products: Product[] = [
   { id: 1, name: "Parxet", image: "/images/parxet.jpeg" },
   { id: 2, name: "Nuviana", image: "/images/Nuviana.jpeg" },
   { id: 3, name: "Mont-ferrant", image: "/images/Mont-ferrant.jpeg" },
-  { id: 4, name: "La Vicalanda", image: "/images/LaVicalanda.jpeg" },
+  { id: 4, name: "Cuvee Original Codorniu", image: "/images/LaVicalanda.jpeg" },
   { id: 5, name: "Finca El Rubio", image: "/images/FincaElRubio.jpeg" },
   { id: 6, name: "La Vicalanda Reserva 2016", image: "/images/LAvicalandaReserva.jpeg" },
   { id: 7, name: "Calmo", image: "/images/Calmo.jpeg" },
