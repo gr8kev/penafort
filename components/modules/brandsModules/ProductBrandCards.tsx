@@ -52,9 +52,9 @@ const brands = [
     price: "₦36,000",
   },
   {
-    name: " Brut Rose Mont-ferrant",
-    description: "Crisp and fruity, perfect for celebrations.",
-    price: "₦48,000",
+    name: "Mont-ferrant Brut",
+    description: "Refreshing and delightful for any occasion.",
+    price: "₦60,000",
   },
   {
     name: "Parxet Brut Rose",
@@ -63,25 +63,93 @@ const brands = [
   },
   {
     name: "La Vicalanda Reserva 2016",
-    description: "Crisp and fruity, perfect for celebrations.",
+    description: "Refreshing and delightful for any occasion.",
     price: "₦111,000",
   },
   {
     name: "Finca El Rubio",
-    description: "Crisp and fruity, perfect for celebrations.",
+    description: "Refreshing and delightful for any occasion.",
     price: "₦154,000",
   },
 
   {
     name: "Royal Carlton Brut",
-    description: "Crisp and fruity, perfect for celebrations.",
+    description: "Bold flavors with a hint of agave.",
     price: "₦69,000",
+  },
+
+
+
+  {
+    name: "Bach Extrisimo Brut Rose",
+    description: "Bold flavors with a hint of agave.",
+    price: "₦42,000",
+  },
+
+  {
+    name: "Bach Rosado Can",
+    description: "Crisp and fruity, perfect for celebrations.",
+    price: "₦48,000",
+  },
+
+  {
+    name: "Codorniu Zero",
+    description: "Bold flavors with a hint of agave.",
+    price: "₦57,000",
+  },
+
+  {
+    name: "La Sonatina Albarino 2022",
+    description: "Bold flavors with a hint of agave.",
+    price: "₦75,000",
+  },
+
+
+  {
+    name: "Brut Rose Mont-ferrant",
+    description: "A premium drink for special moments.",
+    price: "₦48,000",
+  },
+
+  {
+    name: " Parxet Brut",
+    description: "A premium drink for special moments.",
+    price: "₦66,000",
+  },
+  {
+    name: "Nuviana Brut",
+    description: "Crisp and fruity, perfect for celebrations.",
+    price: "₦36,000",
   },
 
   {
     name: "Calmo-legaris-Vine De",
-    description: "Crisp and fruity, perfect for celebrations.",
+    description: "A premium drink for special moments.",
     price: "₦262,500",
+  },
+
+  {
+    name: "Codorniu Spiritz Orange",
+    description: "Crisp and fruity, perfect for celebrations.",
+    price: "₦48,000",
+  },
+
+  {
+    name: "Bach Extrisimo Brut Rose",
+    description: "Bold flavors with a hint of agave.",
+    price: "₦42,000",
+  },
+
+  {
+    name: "Calmo-legaris-Vine De",
+    description: "A premium drink for special moments.",
+    price: "₦262,500",
+  },
+
+  {
+    name: "Codorniu Zero",
+    description: "Bold flavors with a hint of agave.",
+    price: "₦57,000",
   },
 ];
 
@@ -99,6 +167,18 @@ const images = [
   "/images/LAvicalandaReserva.jpeg",
   "/images/FincaElRubio.jpeg",
   "/images/RoyalCarlton jpeg.jpeg",
+  "/images/Bach brut Rose wine.jpeg",
+  "/images/Bach Rosado Can.jpeg",
+  "/images/Cordoniu Zero.jpeg",
+  "/images/LaSonata.jpeg",
+  "/images/Mont-ferrant-brut-reserva.jpeg",
+  "/images/ParxetBrutReserva.jpeg",
+  "/images/BrutNuvianaCava.jpeg",
+  "/images/Calmo.jpeg",
+  "/images/Cordorniu can.jpeg",
+  "/images/Bach brut Rose wine.jpeg",
+  "/images/CalmoLegaris.jpeg",
+  "/images/Cordoniu Zero.jpeg",
 ];
 
 const products: Product[] = Array.from({ length: 25 }, (_, index) => {

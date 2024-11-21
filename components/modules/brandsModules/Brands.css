@@ -27,7 +27,7 @@ body {
     overflow: hidden;
     background-color: #fff;
     transition: transform 0.3s ease-in-out;
-    height: 450px; 
+    height: 380px; 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -111,7 +111,7 @@ body {
     }
   
     .product-card {
-      height: 420px;
+      height: 380px;
     }
   
     .product-image {
