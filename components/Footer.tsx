@@ -30,7 +30,7 @@ const Footer = () => {
                 <i className="far fa-envelope-open"></i>
                 <div className="cta-text">
                   <h4>Mail us</h4>
-                  <span>ask@penafortwinery.com</span>
+                  <span>infomation@penafortwinery.com</span>
                 </div>
               </div>
             </div>
