@@ -1,27 +1,98 @@
 import React, { useState } from "react";
-import Image from 'next/image';
-
+import Image from "next/image";
 
 const Home: React.FC = () => {
   const wines = [
-    { src: "/images/parxet.jpeg", name: "Parxet Brut Rosé", price: "₦54,000" },
-    { src: "/images/Nuviana.jpeg", name: "Nuviana Brut Rosado", price: "₦36,000" },
-    { src: "/images/AnnaCodorniu.jpeg", name: "Anna de Codorniu Ice Rosé", price: "₦102,000" },
-    { src: "/images/AnnaDeCodorniuBrut.jpeg", name: "Anna de Codorniu Brut Rosé", price: "₦102,000" },
-    { src: "/images/Bach brut Rose wine.jpeg", name: "Bach Extrisimo Brut Rosé", price: "₦42,000" },
-    { src: "/images/Bach Rosado Can.jpeg", name: "Bach Vina Extrisimo Rosado Rosé", price: "₦48,000" },
-    { src: "/images/BrutNUvianaCava.jpeg", name: "Nuviana Brut", price: "₦36,000" },
-    { src: "/images/Rondel.jpeg", name: "Rondel Oro Cava Brut", price: "₦42,000" },
-    { src: "/images/CalmoLegaris.jpeg", name: "Calmo Legaris-Vino De Lagrima Nocturno 2017", price: "₦262,000" },
-    { src: "/images/CodorniuCan.jpeg", name: "Codorniu Be Frizz Bubbly Rosé", price: "₦48,000" },
-    { src: "/images/CodorniuCan2.jpeg", name: "Codorniu Be Frizz Bubbly White", price: "₦48,000" },
-    { src: "/images/CordorniuZero.jpeg", name: "Codorniu Zero", price: "₦57,000" },
-    { src: "/images/Cordorniu can.jpeg", name: "Codorniu Spritz Let`Orange", price: "₦48,000" },
-    { src: "/images/cuveeCodorniu.jpeg", name: "Codorniu Cuvée Original Brut Ecológico", price: "₦45,000" },
-    { src: "/images/FincaElRubio.jpeg", name: "Finca El Rubio", price: "₦154,000" },
-    { src: "/images/LaSonata.jpeg", name: "Vinos del Paseante le Sonatina Albarino 2022", price: "₦75,000" },
-    { src: "/images/LAvicalandaReserva.jpeg", name: "La Vicalanda Gran Reserva 2016", price: "₦264,000" },
-    { src: "/images/Mont-ferrant.jpeg", name: "Mont-Ferrant Brut Rose", price: "₦48,000" },
+    {
+      src: "/images/Codorniu Cuvee original Brut Ecologico.png",
+      name: "Codorniu Cuvee original Brut Ecologico",
+      price: "₦54,000",
+    },
+    {
+      src: "/images/anna.png",
+      name: "Nuviana Brut Rosado",
+      price: "₦36,000",
+    },
+    {
+      src: "/images/bach.png",
+      name: "Anna de Codorniu Ice Rosé",
+      price: "₦102,000",
+    },
+    {
+      src: "/images/AnnaDeCodorniuBrut.png",
+      name: "Anna de Codorniu Brut Rosé",
+      price: "₦102,000",
+    },
+    {
+      src: "/images/Bach Extrisimo Brut Rosé.png",
+      name: "Bach Extrisimo Brut Rosé",
+      price: "₦42,000",
+    },
+    {
+      src: "/images/CodorniuCan.png",
+      name: "Bach Vina Extrisimo Rosado Rosé",
+      price: "₦48,000",
+    },
+    {
+      src: "/images/Bach Extrisimo Brut Rosé.png",
+      name: "Nuviana Brut",
+      price: "₦36,000",
+    },
+    {
+      src: "/images/AnnaDeCodorniuBrut.png",
+      name: "Rondel Oro Cava Brut",
+      price: "₦42,000",
+    },
+    {
+      src: "/images/AnnaDeCodorniuBrut.png",
+      name: "Calmo Legaris-Vino De Lagrima Nocturno 2017",
+      price: "₦262,000",
+    },
+    {
+      src: "/images/CodorniuCan.png",
+      name: "Codorniu Be Frizz Bubbly Rosé",
+      price: "₦48,000",
+    },
+    {
+      src: "/images/CodorniuCan2.png",
+      name: "Codorniu Be Frizz Bubbly White",
+      price: "₦48,000",
+    },
+    {
+      src: "/images/AnnaDeCodorniuBrut.png",
+      name: "Codorniu Zero",
+      price: "₦57,000",
+    },
+    {
+      src: "/images/Bach Extrisimo Brut Rosé.png",
+      name: "Codorniu Spritz Let`Orange",
+      price: "₦48,000",
+    },
+    {
+      src: "/images/AnnaDeCodorniuBrut.png",
+      name: "Codorniu Cuvée Original Brut Ecológico",
+      price: "₦45,000",
+    },
+    {
+      src: "/images/AnnaDeCodorniuBrut.png",
+      name: "Finca El Rubio",
+      price: "₦154,000",
+    },
+    {
+      src: "/images/AnnaDeCodorniuBrut.png",
+      name: "Vinos del Paseante le Sonatina Albarino 2022",
+      price: "₦75,000",
+    },
+    {
+      src: "/images/AnnaDeCodorniuBrut.png",
+      name: "La Vicalanda Gran Reserva 2016",
+      price: "₦264,000",
+    },
+    {
+      src: "/images/CodorniuCan2.png",
+      name: "Mont-Ferrant Brut Rose",
+      price: "₦48,000",
+    },
     // More items...
   ];
 
@@ -57,12 +128,12 @@ const Home: React.FC = () => {
           {currentItems.map((wine, index) => (
             <div key={index} className="carousel-item">
               {/* Image */}
-              < Image 
-              src={wine.src} 
-              alt={wine.name} 
-              width={100}
-              height={200}
-              className="carousel-image" 
+              <Image
+                src={wine.src}
+                alt={wine.name}
+                width={100}
+                height={200}
+                className="carousel-image"
               />
               {/* Name and Price */}
               <div className="wine-info">
@@ -76,7 +147,11 @@ const Home: React.FC = () => {
         {/* Controls */}
         <div className="carousel-controls">
           {/* Left Arrow */}
-          <button onClick={handlePrev} disabled={currentIndex <= 0} className="arrow">
+          <button
+            onClick={handlePrev}
+            disabled={currentIndex <= 0}
+            className="arrow"
+          >
             {"<"}
           </button>
 
@@ -92,7 +167,11 @@ const Home: React.FC = () => {
           </div>
 
           {/* Right Arrow */}
-          <button onClick={handleNext} disabled={currentIndex >= totalPages - 1} className="arrow">
+          <button
+            onClick={handleNext}
+            disabled={currentIndex >= totalPages - 1}
+            className="arrow"
+          >
             {">"}
           </button>
         </div>
@@ -122,7 +201,7 @@ const Home: React.FC = () => {
 
         .carousel-image {
           max-width: 100%;
-          height: 200px;
+          height: 200px; /* Default height */
           object-fit: contain;
           border-radius: 8px;
         }
@@ -140,7 +219,7 @@ const Home: React.FC = () => {
 
         .wine-info p {
           font-size: 14px;
-          color: #BA2B27;
+          color: #ba2b27;
         }
 
         .carousel-controls {
@@ -160,19 +239,19 @@ const Home: React.FC = () => {
           width: 6px;
           height: 6px;
           border-radius: 50%;
-          background-color: #E0E0E0;
+          background-color: #e0e0e0;
           cursor: pointer;
         }
 
         .dot.active {
-          background-color: #BB6500;
+          background-color: #bb6500;
         }
 
         .arrow {
           width: 30px;
           height: 30px;
           border-radius: 50%;
-          border: 2px solid #E0E0E0;
+          border: 2px solid #e0e0e0;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -181,7 +260,7 @@ const Home: React.FC = () => {
         }
 
         .arrow:hover {
-          border-color: #BB6500;
+          border-color: #bb6500;
         }
 
         .arrow:disabled {
@@ -189,29 +268,39 @@ const Home: React.FC = () => {
           opacity: 0.5;
         }
 
-        /* Hide arrows and dots on small screens */
+        /* Reduce image height for smaller screens */
+        @media (max-width: 768px) {
+          .carousel-grid {
+            grid-template-columns: repeat(
+              2,
+              1fr
+            ); /* 2 items per row on medium screens */
+          }
+
+          .carousel-item {
+            max-width: 90%;
+          }
+
+          .carousel-image {
+            height: 150px; /* Reduced height */
+          }
+        }
+
         @media (max-width: 480px) {
           .carousel-grid {
             grid-template-columns: 1fr; /* 1 item per row on small screens */
           }
 
-          .carousel-controls {
-            display: none; /* Hide controls on small screens */
-          }
-
           .carousel-item {
             max-width: 100%;
           }
-        }
 
-        /* Adjust to 2 items per row on medium screens */
-        @media (max-width: 768px) {
-          .carousel-grid {
-            grid-template-columns: repeat(2, 1fr);
+          .carousel-image {
+            height: 120px; /* Further reduced height */
           }
 
-          .carousel-item {
-            max-width: 90%;
+          .carousel-controls {
+            display: none; /* Hide controls on small screens */
           }
         }
       `}</style>
