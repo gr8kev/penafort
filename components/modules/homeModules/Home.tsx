@@ -7,14 +7,14 @@ import HomeCarousel from "@/components/HomeCarousel";
 
 const Home: React.FC = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-[#F5EBDA]">
       {/* Hero Section */}
       <div className="container-fluid relative h-[500px] mt-[78px] bg-white">
         {/* Background Image */}
       </div>
 
       {/* Carousel Section */}
-      <div className="container-fluid mt-14 wrapper bg-black">
+      <div className="container-fluid mt-14 wrapper ">
         <div
           className="absolute inset-0 bg-cover bg-center transform scaleY-[-1] bg-[url('/images/Penafortbg.jpeg')] sm:bg-cover"
           style={{ transform: "scaleY(-1)" }}

@@ -122,7 +122,7 @@ const Home: React.FC = () => {
 
   return (
     <div>
-      <div className="carousel-container" style={{ padding: "20px" }}>
+      <div className="carousel-container " style={{ padding: "20px" }}>
         {/* Carousel Items */}
         <div className="carousel-grid">
           {currentItems.map((wine, index) => (
