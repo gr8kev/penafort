@@ -7,10 +7,15 @@ import HomeCarousel from "@/components/HomeCarousel";
 
 const Home: React.FC = () => {
   return (
+ feature/home-carousel-and-some-changes
     <div className="bg-white">
       {/* Hero Section */}
       <div className="relative h-[500px] mt-[78px] bg-white">
         {/* Pseudo-element for background image */}
+    <div>
+      {/* Carousel Section */}
+      <div className="mt-14 wrapper bg-black">
+
         <div
           className="absolute inset-0 bg-cover bg-center transform scaleY-[-1] bg-[url('/images/Penafortbg.jpeg')] sm:bg-cover"
           style={{ transform: 'scaleY(-1)' }} // Flips the image vertically
