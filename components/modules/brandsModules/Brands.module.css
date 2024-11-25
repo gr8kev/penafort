@@ -28,7 +28,7 @@
 }
 
 .heroTitle {
-  font-size: 40px; /* Slightly smaller font size */
+  font-size: 40px; 
   font-weight: normal;
   line-height: 1.4;
   color: white;
@@ -36,7 +36,7 @@
 }
 
 .heroTitle .line {
-  display: block; /* Break into separate lines */
+  display: block; 
   margin-bottom: 10px;
 }
 
@@ -108,8 +108,8 @@
   padding: 5px;
   text-align: center;
   border: 1px solid #ddd;
-  border-right: none; /* Remove border on the right */
-  border-radius: 4px 0 0 4px; /* Round left side */
+  border-right: none; 
+  border-radius: 4px 0 0 4px; 
 }
 
 .addToBasket {
@@ -117,8 +117,8 @@
   background-color: #ba2b27;
   color: white;
   border: 1px solid #ddd;
-  border-left: none; /* Remove border on the left */
-  border-radius: 0 4px 4px 0; /* Round right side */
+  border-left: none; 
+  border-radius: 0 4px 4px 0; 
   cursor: pointer;
 }
 
@@ -148,43 +148,43 @@
 
 @media (max-width: 768px) {
   .wineGrid {
-    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    grid-template-columns: repeat(2, 1fr); 
   }
 }
 
 @media (max-width: 480px) {
   .wineGrid {
-    grid-template-columns: repeat(2, 1fr); /* 1 card per row */
+    grid-template-columns: repeat(2, 1fr); 
   }
 }
 
 @media (max-width: 768px) {
   .addToBasket {
-    padding: 4px 10px; /* Smaller padding */
-    font-size: 12px; /* Reduce font size */
+    padding: 4px 10px; 
+    font-size: 12px;
   }
 
   .quantityInput {
-    width: 40px; /* Adjust input width */
+    width: 40px; 
     padding: 4px;
   }
 }
 
 @media (max-width: 768px) {
   .heroTitle {
-    font-size: 24px; /* Smaller font for hero title */
+    font-size: 24px; 
   }
 
   .wineInfo h3 {
-    font-size: 14px; /* Smaller wine name */
+    font-size: 14px; 
   }
 
   .wineInfo p {
-    font-size: 12px; /* Smaller price text */
+    font-size: 12px; 
   }
 
   .font-opensans {
-    font-size: 10px; /* Smaller general text */
+    font-size: 10px; 
   }
 }
 @media (max-width: 768px) {
@@ -239,33 +239,33 @@
   .actionSection {
     display: flex;
     align-items: center;
-    gap: 5px; /* Adjust spacing */
+    gap: 5px;
   }
 
   .quantityInput {
-    width: 40px; /* Adjust size */
-    padding: 4px; /* Reduce padding */
-    font-size: 12px; /* Adjust font size */
-    text-align: center; /* Center the text */
+    width: 40px;
+    padding: 4px; 
+    font-size: 12px; 
+    text-align: center; 
   }
 
   @media (max-width: 768px) {
     .actionSection {
       display: flex;
       align-items: center;
-      gap: 5px; /* Adjust spacing */
+      gap: 5px; 
     }
   
     .quantityInput {
-      width: 40px; /* Adjust size */
-      padding: 4px; /* Reduce padding */
-      font-size: 12px; /* Adjust font size */
-      text-align: center; /* Center the text */
+      width: 40px; 
+      padding: 4px; 
+      font-size: 12px;
+      text-align: center; 
     }
   
     .addToBasket {
-      padding: 8px 9px; /* Match size with input */
-      font-size: 8px; /* Adjust font size */
+      padding: 8px 9px; 
+      font-size: 8px; 
     }
   }
 }
