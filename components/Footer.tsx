@@ -5,7 +5,7 @@ const Footer = () => {
       style={{
         backgroundColor: "#BB6500",
         color: "white",
-        fontFamily: "'Open Sans', sans-serif", // Set global font-family
+        fontFamily: "'Open Sans', sans-serif",
       }}
       className="footer py-4"
     >
@@ -77,7 +77,7 @@ const Footer = () => {
               style={{
                 textDecoration: "underline",
                 textUnderlineOffset: "5px",
-                fontSize: "18px", // Heading font size
+                fontSize: "18px",
               }}
             >
               ABOUT US

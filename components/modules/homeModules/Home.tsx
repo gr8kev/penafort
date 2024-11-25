@@ -124,7 +124,7 @@ const Home: React.FC = () => {
           <div className="col-lg-6 col-md-6 col-sm-12">
             <div className="ratio ratio-4x3 border border-warning rounded">
               <Image
-                src="/images/Square3.jpeg"
+                src="/images/Square3.png"
                 alt="Square 3"
                 layout="fill"
                 objectFit="cover"
@@ -135,7 +135,7 @@ const Home: React.FC = () => {
           <div className="col-lg-6 col-md-6 col-sm-12">
             <div className="ratio ratio-4x3 border border-warning rounded">
               <Image
-                src="/images/square4.jpeg"
+                src="/images/square4.png"
                 alt="Square 4"
                 layout="fill"
                 objectFit="cover"
