@@ -46,11 +46,12 @@ const Home: React.FC = () => {
         <div className={`${styles.heroSection} mt-[96px] px-10 w-full mx-4`}>
         <div className={`${styles.heroContainer}`}>
           <div className={styles.heroTextContainer}>
-            <h1 className={styles.heroTitle}>
-              <span className={styles.line}>You've got the</span>
-              <span className={styles.line}>desire, we've got</span>
-              <span className={styles.line}>the wine!</span>
-            </h1>
+          <h1 className={styles.heroTitle}>
+          <span className={styles.line}>You&apos;ve got the</span>
+         <span className={styles.line}>desire, we&apos;ve got</span>
+           <span className={styles.line}>the wine!</span>
+          </h1>
+
           </div>
           <div className={styles.heroImageContainer}>
             <Image
