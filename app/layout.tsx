@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css"; // Bootstrap CSS
 import Footer from "@/components/Footer";
 import BootstrapJS from "@/components/BootstrapJS";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 export default function RootLayout({
   children,
@@ -17,7 +18,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
-         <BootstrapJS />
+        <BootstrapJS />
       </body>
     </html>
   );
