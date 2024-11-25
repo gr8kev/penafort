@@ -7,7 +7,7 @@ import HomeCarousel from "@/components/HomeCarousel";
 
 const Home: React.FC = () => {
   return (
-    <div className="bg-[#F5EBDA]">
+    <div className="bg-white">
       {/* Hero Section */}
       <div className="container-fluid relative h-[500px] mt-[78px] bg-white">
         {/* Background Image */}

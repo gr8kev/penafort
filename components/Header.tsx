@@ -27,7 +27,7 @@ export const Header = () => {
       <Navbar
         expand="lg"
         className={`fixed-top py-2 ${
-          scrolled ? "bg-[#F5EBDA] shadow-sm" : "bg-transparent"
+          scrolled ? "bg-[#FAF8F8] shadow-sm" : "bg-transparent"
         }`} // Adjusted padding for both states
       >
         <Container>
