@@ -1,0 +1,12 @@
+{
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "overrides": [
+    {
+      "files": ["*.d.ts"],
+      "rules": {
+        "@next/next/no-img-element": "off",
+        "@typescript-eslint/no-explicit-any": "off"
+      }
+    }
+  ]
+}

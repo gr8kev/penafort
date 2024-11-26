@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+/* Hero Section */
+.heroSection {
+  background: 
+    linear-gradient(90deg, #AF6900 11%, #310605 100%);
+  background-size: cover;
+  background-position: center;
+  height: 300px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  border-radius: 12px; 
+}
+
+.heroContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  color: white;
+}
+
+.heroTextContainer {
+  max-width: 50%;
+  text-align: left;
+}
+
+.heroTitle {
+  font-size: 40px; 
+  font-weight: normal;
+  line-height: 1.4;
+  color: white;
+  font-family: cinzel;
+}
+
+.heroTitle .line {
+  display: block; 
+  margin-bottom: 10px;
+}
+
+.heroImageContainer {
+  max-width: 40%;
+}
+
+.heroImage {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* Rounded corners for the image */
+}
+
+
+.wineGridSection {
+  padding: 10px;
+}
+
+.wineGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+}
+
+.wineItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.wineImage {
+  max-width: 280px;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.wineInfo {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.wineInfo h3 {
+  font-size: 16px;
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+
+.wineInfo p {
+  font-size: 14px;
+  color: #ba2b27;
+}
+
+.actionSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.quantityInput {
+  width: 50px;
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-right: none; 
+  border-radius: 4px 0 0 4px; 
+}
+
+.addToBasket {
+  padding: 6px 20px;
+  background-color: #ba2b27;
+  color: white;
+  border: 1px solid #ddd;
+  border-left: none; 
+  border-radius: 0 4px 4px 0; 
+  cursor: pointer;
+}
+
+.addToBasket:hover {
+  background-color: #a1221f;
+}
+
+.seeMoreContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+ 
+}
+
+.seeMore {
+  padding: 10px 20px;
+  background-color: #ba2b27;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.seeMore:hover {
+  background-color: #a1221f;
+}
+
+@media (max-width: 768px) {
+  .wineGrid {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media (max-width: 480px) {
+  .wineGrid {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media (max-width: 768px) {
+  .addToBasket {
+    padding: 4px 10px; 
+    font-size: 12px;
+  }
+
+  .quantityInput {
+    width: 40px; 
+    padding: 4px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 24px; 
+  }
+
+  .wineInfo h3 {
+    font-size: 14px; 
+  }
+
+  .wineInfo p {
+    font-size: 12px; 
+  }
+
+  .font-opensans {
+    font-size: 10px; 
+  }
+}
+@media (max-width: 768px) {
+  .addToBasket {
+    padding: 4px 10px;
+    font-size: 12px;
+  }
+
+  .quantityInput {
+    width: 40px;
+    padding: 4px;
+  }
+
+  .heroTitle {
+    font-size: 24px;
+  }
+
+  .wineInfo h3 {
+    font-size: 14px;
+  }
+
+  .wineInfo p {
+    font-size: 12px;
+  }
+
+  .font-opensans {
+    font-size: 10px;
+  }
+
+  .wineGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wineGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .addToBasket {
+    padding: 3px 8px;
+    font-size: 10px;
+  }
+
+  .heroTitle {
+    font-size: 16px;
+  }
+}
+@media (max-width: 768px) {
+  .actionSection {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .quantityInput {
+    width: 40px;
+    padding: 4px; 
+    font-size: 12px; 
+    text-align: center; 
+  }
+
+  @media (max-width: 768px) {
+    .actionSection {
+      display: flex;
+      align-items: center;
+      gap: 5px; 
+    }
+  
+    .quantityInput {
+      width: 40px; 
+      padding: 4px; 
+      font-size: 12px;
+      text-align: center; 
+    }
+  
+    .addToBasket {
+      padding: 8px 9px; 
+      font-size: 8px; 
+    }
+  }
+}
+
+
