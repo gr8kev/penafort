@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+
+
+
+.aboutSection {
+    background-color: #fdfdfd;
+    margin-top: 15px; 
+    padding: 0 20px; 
+  }
+  
+  
+  .imageSection {
+    position: relative;
+    height: 350px; 
+    width: 100vw; 
+    background: url("/images/AboutUs2.png") no-repeat center/cover; 
+    margin: 0; 
+    padding: 0; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    overflow: hidden;
+  }
+  
+  .gradientOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(158, 132, 92, 0.15), rgba(158, 132, 92, 0.05)); 
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    padding-left: 30px; 
+  }
+  
+  .imageHeading {
+    font-size: 30px;
+    font-family: Cinzel;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    margin-top: 40px;
+    margin-left: 30px;
+  }
+  
+ 
+  .container {
+    max-width: 1100px; 
+    margin: 0 auto;
+    padding: 50px 20px; 
+  }
+  
+  .heading {
+    font-size: 24px;
+    font-weight: 400;
+    color: black;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: Cinzel;
+  }
+  
+  .textcontainer {
+    background-color: #FEF9ED;
+    line-height: 27px;
+    padding: 20px; 
+    margin-bottom: 30px; 
+  }
+  
+  .paragraph {
+    font-size: 16px;
+    line-height: 1.8; 
+    color: #555;
+    margin-bottom: 20px;
+    text-align: justify;
+    font-family: Open Sans;
+  }
+  
+ 
+  .finalSection {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin: 10px auto; 
+    margin-bottom: 50px;
+  }
+  
+  .imageWrapper {
+    position: relative;
+    width: 96%;
+    height: 350px; 
+    overflow: hidden; 
+  }
+  
+  .finalImage {
+    object-fit: cover; 
+    width: 100%;
+    height: 100%; 
+    transform: rotate(180deg); 
+    
+  }
+  
+  
+  .overlayContent {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    padding-left: 30px; 
+    transform: translate(-50%, -50%); 
+    z-index: 10;
+    color: white;
+  }
+  
+  .finalHeading {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  
+  .finalHeading span {
+    display: block; 
+    font-size: 29px; 
+    margin-bottom: 10px; 
+    font-family: Cinzel;
+    font-weight: 400;
+  }
+  
+ 
+  .orderButton {
+    padding: 10px 40px;
+    background-color: #ba2b27;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 30px;
+    font-size: 16px; 
+  }
+  
+  .orderButton:hover {
+    background-color: #820202;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .imageSection {
+      height: 250px; 
+    }
+  
+    .imageHeading {
+      font-size: 28px;
+    }
+  
+    .heading {
+      font-size: 20px;
+    }
+  
+    .paragraph {
+      font-size: 14px;
+    }
+  
+    .finalSection {
+      flex-direction: column;
+    }
+  
+    .imageWrapper {
+      height: 200px; 
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .imageSection {
+      height: 180px;
+    }
+  
+    .imageHeading {
+      font-size: 22px;
+    }
+  
+    .heading {
+      font-size: 18px;
+    }
+  
+    .paragraph {
+      font-size: 12px;
+    }
+  
+    .imageWrapper {
+      height: 150px; 
+    }
+  }
+
+  @media (max-width: 768px) {
+    .finalHeading {
+      font-size: 20px; 
+    }
+  
+    .finalHeading span {
+      font-size: 24px; 
+      margin-bottom: 8px;
+    }
+  
+    .orderButton {
+      padding: 10px 30px; 
+      font-size: 14px; 
+      margin-top: 20px; 
+    }
+  }
+  
+  /* Very small mobile devices (under 480px) */
+@media (max-width: 480px) {
+    .finalHeading {
+      font-size: 14px; 
+      text-align: center; 
+      margin-bottom: 8px; 
+      padding: 0 10px; 
+    }
+  
+    .finalHeading span {
+      font-size: 16px;
+      margin-bottom: 4px; 
+    }
+  
+    .orderButton {
+      padding: 6px 15px; 
+      font-size: 10px; 
+      margin-top: 10px; 
+      width: auto; 
+      box-sizing: border-box; 
+      
+    }
+  
+    .imageContainer {
+      position: relative; 
+      margin-bottom: 20px; 
+    }
+  
+    .orderButton {
+      position: relative; 
+      z-index: 1; 
+      margin: 0 auto; 
+      display: block; 
+    }
+  
+    .textContainer {
+      padding: 10px; 
+      box-sizing: border-box; 
+    }
+  
+    .imageContainer img {
+      width: 100%; 
+      height: auto; 
+    }
+  }
+  
+  
