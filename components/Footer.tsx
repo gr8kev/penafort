@@ -16,9 +16,9 @@ const Footer = () => {
             <Image
               src="/images/logo-footer.png" // Correct path
               alt="Logo"
-              width={150}
-              height={50}
-              className="footer-logo"
+              width={100}
+              height={99}
+              className="logo"
             />
           </div>
 

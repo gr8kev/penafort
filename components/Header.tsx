@@ -6,11 +6,11 @@ import Image from "react-bootstrap/Image";
 
 export const Header = () => {
   return (
-    <div className="mb-10">
-      <Navbar expand="lg" className="fixed-top py-2 bg-white shadow-sm ">
+    <div className=" ">
+      <Navbar expand="lg" className="fixed-top py-2 bg-white shadow-sm">
         <Container>
           {/* Logo Image */}
-          <Navbar.Brand href="#home" className="itk">
+          <Navbar.Brand href="#home">
             <Image
               src="/images/logo.png"
               alt="Logo"
