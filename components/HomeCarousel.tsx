@@ -73,8 +73,8 @@ const Home: React.FC = () => {
         {currentItems.map((wine, index) => (
           <div
             key={index}
-            className="col-12 col-md-6 col-lg-4 d-flex justify-content-center mb-2"
-            style={{ padding: "0" }} // Remove any padding for full width on mobile
+            className="col-12 col-md-6 col-lg-4 d-flex justify-content-center mb-2 px-2.5" // Added padding for mobile views
+            style={{ padding: "0" }} // Remove any extra padding
           >
             <div
               className="card text-center shadow-sm"
