@@ -6,7 +6,6 @@
 @tailwind utilities;
 
 body {
-  background-color: #ffffff;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -16,9 +15,53 @@ body {
   box-sizing: border-box;
 }
 .word {
-  width: 70%;
+  width: 75%;
+  color: #9e845c !important;
+  font-family: "Open Sans", sans-serif !important;
+  font-size: 19.81px;
+  font-weight: 400;
+  line-height: 26.98px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
 }
-
+.about-head {
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 85.45px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #000000;
+  font-family: "Cinzel", serif;
+}
+.receive {
+  font-family: "Open Sans", sans-serif !important;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24.51px;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #bb6500;
+}
+.btn {
+  font-family: "Open Sans", sans-serif !important;
+  width: Fixed (170.36px) px;
+  height: Hug (64.64px) px;
+  border: 1px solid #b63234 !important;
+  padding: 0.5rem 2rem !important;
+  gap: 9.9px;
+  border-radius: 3.96px 0px 0px 0px;
+  opacity: 0px;
+  color: #8a1c1d !important;
+  background-color: #ba2b27 !important;
+  transition: 0.5s ease-in !important;
+  color: #fff !important;
+}
+.btn:hover {
+  background-color: #f11a13 !important;
+  color: #fff !important;
+}
 .banner {
   background-image: url("/images/banner.png");
   background-position: center;
@@ -28,7 +71,32 @@ body {
   height: 100vh;
   background-color: #ffffff;
 }
+/* styles/about.module.css */
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+}
 
+.card-title {
+  font-family: "Cinzel" !important;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26.96px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.image-container {
+  width: 100%;
+  height: auto; /* Ensure height adjusts automatically */
+  position: relative; /* Required for the `Image` component */
+  overflow: hidden; /* Prevents overflow on small screens */
+}
+
+.about-image {
+  object-fit: cover; /* Ensures the image fills its container */
+}
 @media screen and (max-width: 1024px) {
   .banner {
     background-size: cover;
@@ -44,17 +112,16 @@ body {
   .word {
     width: 100%;
   }
+  .about-head {
+    margin-top: 40px;
+  }
 }
 
 html {
   scroll-behavior: smooth;
 }
 .links a {
-  color: #b63234 !important;
-}
-.btn {
-  border: 1px solid #b63234 !important;
-  padding: 0.5rem 2rem !important;
+  color: #000000 !important;
 }
 
 .navbar-toggler {
@@ -90,202 +157,6 @@ html {
 }
 
 /* Home.module.css */
-
-ul {
-  margin: 0;
-  padding: 0;
-}
-
-.footer-section {
-  background: #f5ebda;
-  position: relative;
-}
-
-.footer-cta {
-  border-bottom: 1px solid #373636;
-  padding: 20px 0;
-}
-
-.single-cta i {
-  color: #a91d2b;
-  font-size: 30px;
-  float: left;
-  margin-top: 8px;
-}
-
-.cta-text {
-  padding-left: 15px;
-  display: inline-block;
-}
-
-.cta-text h4 {
-  color: #ba2b27;
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 2px;
-}
-
-.cta-text span {
-  color: #bb6500;
-  font-size: 15px;
-}
-
-.footer-content {
-  position: relative;
-  z-index: 2;
-}
-
-.footer-pattern img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 330px;
-  background-size: cover;
-  background-position: 100% 100%;
-}
-
-.footer-logo {
-  margin-bottom: 30px;
-}
-
-.footer-logo img {
-  max-width: 200px;
-}
-
-.footer-text p {
-  margin-bottom: 14px;
-  font-size: 14px;
-  color: #bb6500;
-  line-height: 28px;
-}
-
-.footer-social-icon span {
-  color: #bb6500;
-  display: block;
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  display: flex;
-}
-
-.footer-social-icon a {
-  color: #fff;
-  font-size: 16px;
-  margin-right: 15px;
-}
-
-.footer-social-icon i {
-  height: 40px;
-  width: 40px;
-  text-align: center;
-  line-height: 38px;
-  border-radius: 50%;
-}
-
-.facebook-bg {
-  background: #3b5998;
-}
-
-.twitter-bg {
-  background: #55acee;
-}
-
-.google-bg {
-  background: #a91d2b;
-}
-
-.footer-widget-heading h3 {
-  color: #ba2b27;
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 40px;
-  position: relative;
-}
-
-.footer-widget-heading h3::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -15px;
-  height: 2px;
-  width: 50px;
-  background: #a91d2b;
-}
-
-.footer-widget ul li {
-  display: inline-block;
-  width: 50%;
-  margin-bottom: 12px;
-}
-
-.footer-widget ul li a {
-  color: #bb6500;
-  text-transform: capitalize;
-  transition: color 0.3s ease;
-}
-
-.footer-widget ul li a:hover {
-  color: #a91d2b;
-}
-
-.subscribe-form {
-  position: relative;
-  overflow: hidden;
-}
-
-.subscribe-form input {
-  width: 100%;
-  padding: 14px 28px;
-  background: #2e2e2e;
-  border: 1px solid #2e2e2e;
-  color: #fff;
-}
-
-.subscribe-form button {
-  position: absolute;
-  right: 0;
-  top: 0;
-  background: #a91d2b;
-  padding: 13px 20px;
-  border: 1px solid #a91d2b;
-}
-
-.subscribe-form button i {
-  color: #fff;
-  font-size: 22px;
-  transform: rotate(-6deg);
-}
-
-.copyright-area {
-  background: #f5ebda;
-  padding: 25px 0;
-}
-
-.copyright-text p {
-  margin: 0;
-  font-size: 14px;
-  color: #bb6500;
-}
-
-.copyright-text p a {
-  color: #ba2b27;
-  transition: color 0.3s ease;
-}
-
-.footer-menu li {
-  display: inline-block;
-  margin-left: 20px;
-}
-
-.footer-menu li a {
-  font-size: 14px;
-  color: #bb6500;
-  transition: color 0.3s ease;
-}
-
-.footer-menu li:hover a {
-  color: #ff5e14;
-}
 
 .product-container {
   display: grid;
@@ -334,4 +205,13 @@ ul {
   font-weight: bold;
   color: #e74c3c;
   margin: 10px 0;
+}
+.footer-text {
+  width: 80%;
+}
+
+@media screen and (max-width: 991px) {
+  .footer-text {
+    width: 100%;
+  }
 }
