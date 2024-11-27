@@ -25,6 +25,13 @@ body {
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
 }
+.word2 {
+  color: #9e845c !important;
+  font-family: "Open Sans", sans-serif !important;
+  font-size: 19.81px;
+  font-weight: 400;
+  line-height: 26.98px;
+}
 .about-head {
   font-size: 2.5rem;
   font-weight: 400;

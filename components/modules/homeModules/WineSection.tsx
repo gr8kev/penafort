@@ -9,7 +9,7 @@ const WineSection = () => {
       </h1>
 
       {/* Body Text */}
-      <p className="mb-4 text-start text-md-center">
+      <p className="mb-4 text-start text-md-center word2 ">
         As one of the biggest wine companies in the world, it is our
         responsibility to make sure our growth is sustainable to our people.
       </p>
