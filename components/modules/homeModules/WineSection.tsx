@@ -2,7 +2,7 @@ import React from "react";
 
 const WineSection = () => {
   return (
-    <div className="container-fluid p-0">
+    <div className="container-fluid p-4">
       {/* Header */}
       <h1 className="mb-3 about-head mt-0 mt-md-5 text-start text-md-center">
         Our wines

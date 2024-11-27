@@ -20,7 +20,7 @@ export default function About() {
         </div>
 
         {/* Content Section */}
-        <div className="col-12 col-md-6 d-flex flex-column justify-content-center align-items-start px-3 px-md-5 py-3 py-md-0 p-0">
+        <div className="col-12 col-md-6 d-flex flex-column justify-content-center align-items-start px-4 px-md-5 py-3 py-md-0 p-0">
           {/* Header */}
           <div className="about-head text-left mb-2">About Us</div>
 
