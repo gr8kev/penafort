@@ -13,9 +13,11 @@ const About = () => {
         </div>
       </div>
 
+
+
       {/* Text Content */}
       <div className={styles.container}>
-        <h2 className={styles.heading}>ABOUT US</h2>
+        <h2 className={styles.head}>ABOUT US</h2>
         <div className={styles.textcontainer}>
           <p className={styles.paragraph}>
             At Penafort winery, we believe every sip should tell a story and every bottle should spark joy. Whether you&apos;re
@@ -68,7 +70,7 @@ const About = () => {
             src="/images/penafortbg.jpeg" // Replace this with your actual image path
             alt="Wine glass with grapes"
             className={styles.finalImage} // Custom styling for additional control
-            width={1440} // Adjust to fit your layout
+            width={1400} // Adjust to fit your layout
             height={150} // Reduced height
           />
         </div>

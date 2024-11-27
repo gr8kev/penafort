@@ -42,37 +42,46 @@ const Home: React.FC = () => {
     <div>
       {/* Hero Section */}
       <div className="bg-white">
-        {/* Hero Section */}
-        <div className={`${styles.heroSection} mt-[96px] px-10 w-full mx-4`}>
-        <div className={`${styles.heroContainer}`}>
-          <div className={styles.heroTextContainer}>
-            <h1 className={styles.heroTitle}>
-            <span className={styles.line}>You&apos;ve got the</span>
-            <span className={styles.line}>desire, we&apos;ve got</span>
-  
-              <span className={styles.line}>the wine!</span>
-            </h1>
-          </div>
-          <div className={styles.heroImageContainer}>
-            <Image
-              src="/images/Brands-removebg-preview.png"
-              alt="Hero Wine Bottles"
-              width={548}
-              height={380}
-              className={styles.heroImage}
-            />
-          </div>
-        </div>
-        </div>
-        </div>
+  {/* Hero Section */}
+  <div className="mt-[96px] mx-auto w-full px-4 lg:px-10">
+    <div className="relative w-full flex justify-center items-center rounded-lg overflow-hidden mb-8">
+      {/* Hero Image */}
+      <div className="relative w-full max-w-[1245px]">
+        <Image
+          src="/images/BrandsNew.png"
+          alt="Hero Wine Bottles"
+          layout="responsive"
+          width={1440}
+          height={420}
+          className="object-cover w-full h-auto"
+        />
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/20 to-transparent"></div>
+      </div>
+
+      {/* Hero Text */}
+      <div className="absolute top-1/2 left-4 sm:left-6 lg:left-10 transform -translate-y-1/2 z-10 text-white max-w-[90%] md:max-w-md">
+        <h1 className="text-xl sm:text-[14px] md:text-4xl font-cinzel leading-relaxed text-left">
+          <span className="block mb-2">You&apos;ve got the</span>
+          <span className="block mb-2">desire, we&apos;ve got</span>
+          <span className="block">the wine!</span>
+        </h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
 
     
 
       
 
       {/* Wine Grid Section */}
-      <div className="bg-[#F7F7F7] mt-5">
-      <div style={{ marginTop: "4rem" }} className="container-fluid text-center">
+      <div className="bg-[#F7F7F7] p-10">
+      <div className="container-fluid text-center">
   <h4 className="font-cinzel">OUR WINES</h4>
   <div className="font-opensans text-center text-[#BB6500] text-[13px]">
     As one of the biggest wine companies in the world, it is our responsibility
