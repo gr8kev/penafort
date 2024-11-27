@@ -66,16 +66,19 @@ const Home: React.FC = () => {
   const handleDotClick = (index: number) => setCurrentIndex(index);
 
   return (
-    <div className="container my-5  position-relative ">
-      <div className="row g-4">
+    <div className="container-fluid my-5 position-relative p-0">
+      <div className="row g-0">
+        {" "}
+        {/* Removed g-4 to remove gaps between items */}
         {currentItems.map((wine, index) => (
           <div
             key={index}
             className="col-12 col-md-6 col-lg-4 d-flex justify-content-center mb-2"
+            style={{ padding: "0" }} // Remove any padding for full width on mobile
           >
             <div
               className="card text-center shadow-sm"
-              style={{ width: "400px", height: "400px" }}
+              style={{ width: "100%", height: "400px" }} // Full width on mobile
             >
               <Image
                 src={wine.src}
@@ -95,12 +98,12 @@ const Home: React.FC = () => {
       </div>
 
       {/* Control Buttons */}
-      <div className="d-flex justify-content-center align-items-center position-absolute w-100  ">
-        {/* Control Buttons */}
+      <div className="d-flex justify-content-center align-items-center position-absolute w-100">
+        {/* Prev Button */}
         <button
           onClick={handlePrev}
           disabled={currentIndex <= 0}
-          className="btn-outline-secondary  d-flex align-items-center justify-content-center "
+          className="btn-outline-secondary d-flex align-items-center justify-content-center"
           style={{
             width: "20px",
             height: "20px",
@@ -120,9 +123,9 @@ const Home: React.FC = () => {
             <path
               d="M7.69222 14.6218L1.19624 8.12584L7.69222 1.62986"
               stroke="#BB6500"
-              stroke-width="1.70263"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.70263"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </button>
@@ -152,7 +155,7 @@ const Home: React.FC = () => {
         <button
           onClick={handleNext}
           disabled={currentIndex >= totalPages - 1}
-          className=" btn-outline-secondary d-flex align-items-center justify-content-center mx-2"
+          className="btn-outline-secondary d-flex align-items-center justify-content-center mx-2"
           style={{
             width: "20px",
             height: "20px",
@@ -172,9 +175,9 @@ const Home: React.FC = () => {
             <path
               d="M1.01671 1.1333L7.51269 7.62929L1.01671 14.1253"
               stroke="#BB6500"
-              stroke-width="1.70263"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.70263"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </button>

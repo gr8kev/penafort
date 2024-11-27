@@ -215,3 +215,9 @@ html {
     width: 100%;
   }
 }
+@media (min-width: 768px) {
+  .image-container {
+    padding-left: 15px; /* Adds padding on the left */
+    padding-right: 15px; /* Adds padding on the right */
+  }
+}
