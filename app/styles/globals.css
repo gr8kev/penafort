@@ -232,3 +232,7 @@ html {
     padding-right: 15px; /* Adds padding on the right */
   }
 }
+html,
+body {
+  overflow-x: hidden;
+}
