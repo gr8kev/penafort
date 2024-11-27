@@ -3,7 +3,7 @@ const Footer = () => {
   return (
     <div
       style={{
-        backgroundColor: "#BB6500",
+        backgroundColor: "#BA2B27",
         color: "white",
         fontFamily: "'Open Sans', sans-serif",
       }}

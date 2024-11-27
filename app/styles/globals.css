@@ -51,24 +51,23 @@ body {
   text-decoration-skip-ink: none;
   color: #bb6500;
 }
-.btn {
+.btn-custom {
   font-family: "Open Sans", sans-serif !important;
-  width: Fixed (170.36px) px;
-  height: Hug (64.64px) px;
+
   border: 1px solid #b63234 !important;
   padding: 0.5rem 2rem !important;
   gap: 9.9px;
-  border-radius: 3.96px 0px 0px 0px;
-  opacity: 0px;
-  color: #8a1c1d !important;
+  border-radius: 3.96px !important;
+  opacity: 1;
+  color: #fff !important;
   background-color: #ba2b27 !important;
   transition: 0.5s ease-in !important;
+}
+.btn-custom:hover {
+  background-color: #b63234 !important;
   color: #fff !important;
 }
-.btn:hover {
-  background-color: #f11a13 !important;
-  color: #fff !important;
-}
+
 .banner {
   background-image: url("/images/banner.png");
   background-position: center;

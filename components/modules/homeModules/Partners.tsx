@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const Partners = () => {
   return (
@@ -13,13 +14,14 @@ const Partners = () => {
             style={{ minHeight: "100%" }}
           >
             <div className="col-12 col-md-6 d-flex justify-content-center mb-4 mb-md-0 p-0 m-0">
-              <img
-                src="images/footer-girls.png"
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  objectFit: "cover",
-                }}
+              <Image
+                src="/images/footer-girls.png"
+                alt="girls"
+                layout="responsive"
+                width={500}
+                height={500}
+                objectFit="cover"
+                className="about-image"
               />
             </div>
 
@@ -42,7 +44,9 @@ const Partners = () => {
                   Rosé
                 </p>
                 <div>
-                  <button className="btn bg-white text-dark">Order Now</button>
+                  <button className="btn-custom btn-primary bg-white text-dark ">
+                    Order Now
+                  </button>
                 </div>
               </div>
             </div>

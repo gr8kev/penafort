@@ -21,7 +21,7 @@ const Nature = () => {
           <div className="col-lg-6 col-md-6 col-sm-12">
             <div className="ratio ratio-4x3 border border-warning rounded">
               <Image
-                src="/images/Square1.jpeg"
+                src="/images/Square1.png"
                 alt="Square 1"
                 layout="fill"
                 objectFit="cover"
@@ -32,7 +32,7 @@ const Nature = () => {
           <div className="col-lg-6 col-md-6 col-sm-12">
             <div className="ratio ratio-4x3 border border-warning rounded">
               <Image
-                src="/images/square2.jpeg"
+                src="/images/square2.png"
                 alt="Square 2"
                 layout="fill"
                 objectFit="cover"
@@ -66,7 +66,9 @@ const Nature = () => {
 
         <div className="mt-2 ">
           <Link href="#">
-            <button className="mt-3 mb-2 btn">Order Now</button>
+            <button className="mt-3 mb-2 btn-custom btn-primary">
+              Order Now
+            </button>
           </Link>
         </div>
       </div>

@@ -13,7 +13,7 @@ export default function About() {
               layout="responsive"
               width={600}
               height={400}
-              objectFit="cover" // Maintains aspect ratio
+              objectFit="cover"
               className="about-image"
             />
           </div>
@@ -34,7 +34,7 @@ export default function About() {
 
           {/* Button */}
           <div className="mt-5 text-left">
-            <button className="btn">Read More</button>
+            <button className="btn-custom btn-primary">Read More</button>
           </div>
         </div>
       </div>
