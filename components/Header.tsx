@@ -6,8 +6,8 @@ import Image from "react-bootstrap/Image";
 
 export const Header = () => {
   return (
-    <div className=" ">
-      <Navbar expand="lg" className="fixed-top py-2 bg-white shadow-sm">
+    <div className="">
+      <Navbar expand="lg" className="fixed-top py-2 bg-white shadow-sm ">
         <Container>
           {/* Logo Image */}
           <Navbar.Brand href="#home">
@@ -20,7 +20,7 @@ export const Header = () => {
               height={99}
             />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto links">
               <Nav.Link href="/">Home</Nav.Link>
@@ -32,6 +32,7 @@ export const Header = () => {
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
         </Container>
       </Navbar>
     </div>

@@ -42,6 +42,7 @@ body {
   color: #000000;
   font-family: "Cinzel", serif;
 }
+
 .receive {
   font-family: "Open Sans", sans-serif !important;
   font-size: 18px;
@@ -130,10 +131,6 @@ body {
     padding: 0 0 0 10px !important;
     width: 100%;
   }
-  .Navbar {
-    padding: 0 !important;
-    margin: 0 !important;
-  }
 }
 
 html {
@@ -174,8 +171,6 @@ html {
 .navbar-brand img {
   width: 100%;
 }
-
-/* Home.module.css */
 
 .product-container {
   display: grid;
