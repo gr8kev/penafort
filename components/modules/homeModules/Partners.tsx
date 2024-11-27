@@ -3,11 +3,11 @@ import Image from "next/image";
 
 const Partners = () => {
   return (
-    <div className="mb-0">
-      <div
-        className="container-fluid p-0"
-        style={{ minHeight: "600px", backgroundColor: "#BA2B27" }}
-      >
+    <div
+      className="container-fluid mb-5   "
+      style={{ minHeight: "600px", backgroundColor: "#BA2B27" }}
+    >
+      <div className="container-fluid p-0">
         <div className="container-fluid p-0 m-0">
           <div
             className="row justify-content-center align-items-center m-0 h-100"
@@ -40,8 +40,7 @@ const Partners = () => {
                     lineHeight: "49.03px",
                   }}
                 >
-                  In Partnership with 19 Crimes Snoop Cali Rosé This is How We
-                  Rosé
+                  We pride in our brand and in our wine.
                 </p>
                 <div>
                   <button className="btn-custom btn-primary bg-white text-dark ">

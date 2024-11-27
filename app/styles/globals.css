@@ -121,6 +121,11 @@ body {
   .about-head {
     margin-top: 40px;
   }
+
+  .container {
+    margin: 0 !important;
+    padding: 10px !important;
+  }
 }
 
 html {
@@ -213,7 +218,7 @@ html {
   margin: 10px 0;
 }
 .footer-text {
-  width: 80%;
+  width: 60%;
 }
 
 @media screen and (max-width: 991px) {

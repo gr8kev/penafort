@@ -7,7 +7,7 @@ const Footer = () => {
         color: "white",
         fontFamily: "'Open Sans', sans-serif",
       }}
-      className="footer py-4"
+      className="footer py-4 "
     >
       <div className="container">
         <div className="row mt-5">
