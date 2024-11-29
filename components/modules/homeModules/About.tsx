@@ -25,7 +25,7 @@ export default function About() {
           <div className="about-head text-left mb-2">About Us</div>
 
           {/* Body Text */}
-          <div className="word mt-2 text-left">
+          <div className="word mt-2 text-left w-full">
             At Penafort Winery, we believe every sip should tell a story and
             every bottle should spark joy. Whether you’re celebrating
             milestones, unwinding after a long day, or just treating yourself,
