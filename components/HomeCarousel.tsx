@@ -13,7 +13,7 @@ const Home: React.FC = () => {
     {
       src: "/images/anna.png",
       name: "Anna de Codorniu Brut Rosé",
-      price: "₦102,000",
+      price: "₦117,000",
     },
     {
       src: "/images/bach.png",
@@ -28,22 +28,72 @@ const Home: React.FC = () => {
     {
       src: "/images/CodorniuCan2.png",
       name: "Codorniu Be Frizz Bubbly White",
-      price: "₦48,000",
+      price: "₦54,000",
     },
     {
       src: "/images/CodorniuCan-removebg-preview.png",
       name: "Codorniu Be Frizz Bubbly Rosé",
-      price: "₦48,000",
+      price: "₦54,000",
     },
     {
       src: "/images/NuvianaSBrut-removebg-preview.png",
       name: "Nuviana Brut",
-      price: "₦36,000",
+      price: "₦45,000",
     },
     {
       src: "/images/Rondel-removebg-preview.png",
       name: "Rondel Oro Cava Brut",
-      price: "₦42,000",
+      price: "₦51,000",
+    },
+    {
+      src: "/images/Cordoniu_Zero-removebg-preview.png",
+      name: "Codorniu Zero",
+      price: "₦69,000",
+    },
+    {
+      src: "/images/Mont-ferrant-brut-reserva-removebg-preview.png",
+      name: "Mont-Ferrant Brut Reserva Ecológico",
+      price: "₦69,000",
+    },
+    {
+      src: "/images/FincaElRubio-removebg-preview.png",
+      name: "Finca El Rubio",
+      price: "₦186,000",
+    },
+    {
+      src: "/images/calllmo-removebg-preview.png",
+      name: "Calmo Legaris-Vino De Lagrima Nocturno 2017",
+      price: "₦330,000",
+    },
+    {
+      src: "/images/Cordorniu_can-removebg-preview.png",
+      name: "Codorniu Spiritz Let'Orange",
+      price: "₦54,000",
+    },
+    {
+      src: "/images/LaSonata-removebg-preview.png",
+      name: "Vinos del Paseante La Sonatina Albarino 2022",
+      price: "₦87,000",
+    },
+    {
+      src: "/images/Mont-ferrant-removebg-preview.png",
+      name: "Mont-Ferrant Brut Rosé",
+      price: "₦69,000",
+    },
+    {
+      src: "/images/Parxet-removebg-preview.png",
+      name: "Parxet Brut Rose",
+      price: "₦81,000",
+    },
+    {
+      src: "/images/RoyalCarlton_jpeg-removebg-preview.png",
+      name: "Royal Carlton Brut",
+      price: "₦51,000",
+    },
+    {
+      src: "/images/VintagesCor-removebg-preview.png",
+      name: "Codorniu Vintage Brut",
+      price: "₦51,000",
     },
   ];
 

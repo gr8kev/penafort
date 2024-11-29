@@ -14,7 +14,7 @@ const Home: React.FC = () => {
     {
       src: "/images/anna.png",
       name: "Anna de Codorniu Brut Rosé",
-      price: "₦102,000",
+      price: "₦117,000",
     },
     {
       src: "/images/bach.png",
@@ -24,17 +24,17 @@ const Home: React.FC = () => {
     {
       src: "/images/CodorniuCan2.png",
       name: "Codorniu Be Frizz Bubbly White",
-      price: "₦48,000",
+      price: "₦54,000",
     },
     {
       src: "/images/CodorniuCan-removebg-preview.png",
       name: "Codorniu Be Frizz Bubbly Rosé",
-      price: "₦48,000",
+      price: "₦54,000",
     },
     {
       src: "/images/NuvianaSBrut-removebg-preview.png",
       name: "Nuviana Brut",
-      price: "₦36,000",
+      price: "₦45,000",
     },
   ];
 
