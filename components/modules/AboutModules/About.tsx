@@ -5,6 +5,8 @@ import styles from "./About.module.css";
 
 const About = () => {
   return (
+    
+    
     <section className={styles.aboutSection}>
       {/* Gradient Background with About Us Image */}
       <div className={styles.imageSection}>
@@ -76,6 +78,7 @@ const About = () => {
         </div>
       </div>
     </section>
+  
   );
 };
 
