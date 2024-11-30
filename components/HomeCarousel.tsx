@@ -22,8 +22,8 @@ const Home: React.FC = () => {
     },
     {
       src: "/images/Codorniu Cuvee original Brut Ecologico.png",
-      name: "La Vicalanda Gran Reserva 2016",
-      price: "₦264,000",
+      name: "La Vicalanda  Reserva 2016",
+      price: "₦135,000",
     },
     {
       src: "/images/CodorniuCan2.png",
@@ -88,12 +88,12 @@ const Home: React.FC = () => {
     {
       src: "/images/RoyalCarlton_jpeg-removebg-preview.png",
       name: "Royal Carlton Brut",
-      price: "₦51,000",
+      price: "₦81,000",
     },
     {
       src: "/images/VintagesCor-removebg-preview.png",
       name: "Codorniu Vintage Brut",
-      price: "₦51,000",
+      price: "₦54,000",
     },
   ];
 
