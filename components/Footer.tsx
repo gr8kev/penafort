@@ -140,21 +140,21 @@ const Footer = () => {
             >
               LATEST NEWS
             </h5>
-            <p style={{ fontSize: "13px" }}>September 11, 2024</p>
+            <p style={{ fontSize: "13px" }}>OVER 450 Years, 1551</p>
             <p
               style={{ fontSize: "13px", fontWeight: "400" }}
               className="text-black"
             >
               LARGEST VINEYARD
             </p>
-            <p style={{ fontSize: "13px" }}>September 11, 2024</p>
+            <p style={{ fontSize: "13px" }}>November 1-10, 2024</p>
             <p
               style={{ fontSize: "13px", fontWeight: "400" }}
               className="text-black"
             >
               Trade Fair
             </p>
-            <p style={{ fontSize: "13px" }}>September 11, 2024</p>
+            <p style={{ fontSize: "13px" }}>Every Last Sunday, 2024</p>
             <p
               style={{ fontSize: "13px", fontWeight: "400" }}
               className="text-black"
