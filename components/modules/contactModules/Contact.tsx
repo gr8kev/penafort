@@ -12,7 +12,7 @@ const Contact = () => {
       <div className={styles.contactPage}>
         <div className={styles.container}>
           {/* Left Section */}
-          <div className={styles.left}>
+        <div className={`${styles.left} flex flex-col items-center justify-center text-center md:text-left md:items-start p-1`}>
             <h2 className={styles.heading}>
               GET IN <span className={styles.highlight}>TOUCH</span>
             </h2>
