@@ -1,8 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
 
+
+.aboutbg{
+    background-color: #F5EBDA;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
 .aboutSection {
-  background-color: #fdfdfd;
+  background-color: #F5EBDA;
+
   margin-top: 15px;
   padding: 0;
 }

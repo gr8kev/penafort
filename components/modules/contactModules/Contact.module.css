@@ -1,0 +1,288 @@
+
+.contactPage {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #fff;
+    margin-top: 60px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: #fff;
+    padding: 20px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+}
+
+.input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.textarea {
+    padding: 10px;
+    border: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: none;
+}
+
+.right {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.topRed {
+    position: relative;
+    background-color: #ba2b27;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 0px;
+    left: 50%;
+}
+
+.bottomRed {
+    background-color: #ba2b27;
+    width: 100%;
+    height: 50px;
+    position: relative;
+    left: 50%;
+    bottom: 75px;
+}
+
+.mapContainer {
+    position: relative;
+    flex: 1;
+    width: 100%;
+    right: -25px;
+}
+
+.map {
+    height: 90%;
+    width: 100%;
+    max-width: 1200px;
+    right: 0;
+}
+
+.heading {
+    font-size: 46px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-family: 'Cinzel';
+}
+
+.highlight {
+    color: #ba2b27;
+}
+
+.description {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.submitButton {
+    background-color: #ba2b27;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+    background-color: #ba2b27;
+}
+
+.contactInfo {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.infoItem {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 400;
+    color: #333;
+}
+
+
+
+.containers {
+    width: 100%;
+    background-color: #F5EBDA;  
+    padding: 130px 0;
+    box-sizing: border-box;
+}
+
+.redBackground {
+    display: flex;
+    justify-content: space-between; 
+    background-color: #ba2b27; 
+    padding: 20px;
+    align-items: center;
+    width: 100%;
+    border-radius: 10px;
+    height: 300px; 
+    position: relative;  
+}
+
+.imageContainers {
+    flex: 1;  
+    height: 100%;  
+    position: relative;  
+}
+
+.contentImages {
+    width: 70%;
+    height: 400px;  
+    object-fit: cover; 
+    position: relative;
+    bottom: 65px;
+    left: 12%;
+    border-radius: 8px;
+}
+
+.textContainers {
+    flex: 1; 
+    color: white;
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-transform: lowercase;  
+}
+
+.contentTitles {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    text-transform: lowercase; 
+}
+
+.contentButtons {
+    padding: 10px 20px;
+    background-color: white;
+    color: #000;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: auto;  
+}
+
+.contentButtons:hover {
+    background-color: #b71c1c;
+    color: white;
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+   
+    .redBackground {
+        flex-direction: row; 
+        align-items: center;
+        padding: 20px;
+        height: 300px;
+    }
+
+    .imageContainers {
+        width: 50%;
+        height: 100%;  
+    }
+
+    .contentImages {
+        height: 400px;  
+        object-fit: cover;  
+        border-radius: 8px;
+    }
+
+    .textContainers {
+        width: 50%;
+        padding: 20px;
+        text-align: left;  
+    }
+
+    .contentTitles {
+        font-size: 28px;  
+        text-align: left;
+    }
+
+    .contentButtons {
+        width: auto;  
+        padding: 8px 16px;  
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .redBackground {
+        flex-direction: column;  
+        align-items: center; 
+        padding: 10px; 
+        height: 250px;  
+    }
+
+    .contentTitles {
+        font-size: 20px;
+        margin-bottom: 15px;
+        color: #ba2b27;
+    }
+
+    .contentButtons {
+        padding: 8px 12px;
+        font-size: 12px;
+        position: relative;
+        bottom: 10px;
+        color: #ba2b27;
+    }
+
+    .contentImages {
+        height: 220px; 
+        position: relative;
+        top: 10px;
+    }
+}
+
+

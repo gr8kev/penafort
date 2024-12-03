@@ -8,7 +8,7 @@ const Home: React.FC = () => {
     {
       src: "/images/AnnaDeCodorniuBrut.png",
       name: "Codorniu Cuvee original Brut Ecologico",
-      price: "₦45,000",
+      price: "₦54,000",
     },
     {
       src: "/images/anna.png",
