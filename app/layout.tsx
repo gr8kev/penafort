@@ -6,9 +6,7 @@ import Footer from "@/components/Footer";
 import BootstrapJS from "@/components/BootstrapJS";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import Head from "next/head"; // Import Head for managing the head section
 import { Open_Sans } from "next/font/google";
-// Adjust the path to your Navbar component
 
 const Opensans = Open_Sans({
   weight: ["400", "500", "600", "700"],
@@ -22,11 +20,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/logo.ico" sizes="any" />
+      </head>
       <body>
-        <Head>
-          {/* Favicon */}
-          <link rel="icon" href="/images/logo.png" type="image/png" />
-        </Head>
         <main className={Opensans.className}>
           <Header />
           {children}

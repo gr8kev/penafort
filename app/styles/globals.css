@@ -5,7 +5,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+.body {
   font-family: "Open Sans", sans-serif;
 }
 
@@ -15,7 +15,7 @@ body {
   box-sizing: border-box;
 }
 .word {
-  width: 75%;
+  width: 100%;
   color: #9e845c !important;
   font-family: "Open Sans", sans-serif !important;
   font-size: 19.81px;
@@ -25,6 +25,7 @@ body {
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
 }
+
 .word2 {
   color: #9e845c !important;
   font-family: "Open Sans", sans-serif !important;
@@ -68,16 +69,10 @@ body {
   background-color: #b63234 !important;
   color: #fff !important;
 }
-
-.banner {
-  background-image: url("/images/banner.png");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100vh;
-  background-color: #ffffff;
+.abou {
+  background: red;
 }
+
 /* styles/about.module.css */
 .about-container {
   display: flex;
@@ -102,7 +97,8 @@ body {
 }
 
 .about-image {
-  object-fit: cover; /* Ensures the image fills its container */
+  object-fit: cover;
+  width: 100%; /* Ensures the image fills its container */
 }
 .container {
   width: 100% !important;
@@ -112,6 +108,13 @@ body {
     background-size: cover;
     height: 35vh;
   }
+  .word {
+    width: 100% !important;
+  }
+  .about-image {
+    object-fit: cover;
+    width: 100%; /* Ensures the image fills its container */
+  }
 }
 
 @media screen and (max-width: 991px) {
@@ -120,16 +123,17 @@ body {
     height: 35vh;
   }
   .word {
-    width: 100%;
-  }
-  .about-head {
-    margin-top: 40px;
+    width: 100% !important;
   }
 
   .container {
     margin: 0 !important;
     padding: 0 0 0 10px !important;
     width: 100%;
+  }
+  .about-image {
+    object-fit: cover;
+    width: 100%; /* Ensures the image fills its container */
   }
 }
 
@@ -161,8 +165,27 @@ html {
   background-position: center;
   background-size: 100%;
 }
+/* Ensure Navbar has no unnecessary padding */
 
-/* Header.css */
+/* Prevent the toggle button from shifting */
+.navbar-toggler {
+  position: absolute;
+  right: 1rem; /* Adjust as needed */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1050; /* Keep it above the tray */
+}
+
+/* Ensure the collapse tray expands without affecting layout */
+.navbar-collapse {
+  flex-grow: 0;
+  /* Optional for better mobile aesthetics */
+}
+
+/* Smooth transition */
+.navbar-collapse.collapsing {
+  transition: height 0.3s ease;
+}
 
 .navbar-brand {
   width: 80px;
@@ -229,12 +252,7 @@ html {
     width: 100%;
   }
 }
-@media (min-width: 768px) {
-  .image-container {
-    padding-left: 15px; /* Adds padding on the left */
-    padding-right: 15px; /* Adds padding on the right */
-  }
-}
+
 html,
 body {
   overflow-x: hidden;

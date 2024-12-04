@@ -7,7 +7,7 @@ import Image from "react-bootstrap/Image";
 export const Header = () => {
   return (
     <div className="">
-      <Navbar expand="lg" className="fixed-top py-2 bg-white shadow-sm ">
+      <Navbar expand="lg" className="fixed-top py-2 bg-transparent shadow-sm">
         <Container>
           {/* Logo Image */}
           <Navbar.Brand href="#home">
@@ -21,7 +21,17 @@ export const Header = () => {
             />
           </Navbar.Brand>
 
-          <Navbar.Collapse id="basic-navbar-nav">
+          {/* Navbar Toggle */}
+          <Navbar.Toggle
+            aria-controls="basic-navbar-nav"
+            className="toggle-right"
+          />
+
+          {/* Navbar Collapse */}
+          <Navbar.Collapse
+            id="basic-navbar-nav"
+            className="justify-content-end"
+          >
             <Nav className="ms-auto links">
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/about">About</Nav.Link>
@@ -32,7 +42,6 @@ export const Header = () => {
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
         </Container>
       </Navbar>
     </div>

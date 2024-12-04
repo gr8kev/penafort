@@ -1,78 +1,18 @@
 import React from "react";
-import Image from "next/image";
+
 const HomeHero = () => {
   return (
-    <div>
-      <div className="container-fluid p-0 ">
-        {/* Bootstrap Carousel */}
-        <div
-          id="penaforteCarousel"
-          className="carousel slide carousel-fade custom-carousel-height mt-24"
-          data-bs-ride="carousel"
-        >
-          <div className="carousel-inner">
-            {/* Carousel Items */}
-            <div className="carousel-item active">
-              <Image
-                src="/images/image1.png"
-                className="d-block w-100"
-                alt="First Slide"
-                width={1920}
-                height={1080}
-                layout="responsive"
-                objectFit="cover"
-              />
-            </div>
-            <div className="carousel-item">
-              <Image
-                src="/images/image2.png"
-                className="d-block w-100"
-                alt="Second Slide"
-                width={1920}
-                height={1080}
-                layout="responsive"
-                objectFit="cover"
-              />
-            </div>
-            <div className="carousel-item">
-              <Image
-                src="/images/image3.png"
-                className="d-block w-100"
-                alt="Third Slide"
-                width={1920}
-                height={1080}
-                layout="responsive"
-                objectFit="cover"
-              />
-            </div>
-          </div>
-
-          {/* Carousel Controls */}
-          <button
-            className="carousel-control-prev"
-            type="button"
-            data-bs-target="#penaforteCarousel"
-            data-bs-slide="prev"
-          >
-            <span
-              className="carousel-control-prev-icon"
-              aria-hidden="true"
-            ></span>
-            <span className="visually-hidden">Previous</span>
-          </button>
-          <button
-            className="carousel-control-next"
-            type="button"
-            data-bs-target="#penaforteCarousel"
-            data-bs-slide="next"
-          >
-            <span
-              className="carousel-control-next-icon"
-              aria-hidden="true"
-            ></span>
-            <span className="visually-hidden">Next</span>
-          </button>
-        </div>
+    <div
+      className="vh-100 bg-image d-flex align-items-center justify-content-center"
+      style={{
+        backgroundImage: "url('/images/hero.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="text-center text-white">
+        <h1 className="display-4">Welcome to HomeHero</h1>
+        <p className="lead">Your responsive hero section with Bootstrap</p>
       </div>
     </div>
   );
