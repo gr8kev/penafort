@@ -22,7 +22,8 @@ const config: Config = {
         'slide-in-left': 'slide-in-left 0.5s ease-out forwards',
       },
       screens: {
-        sm: "320px",
+        'xs': '320px', 
+        'sm': '640px',
       },
       colors: {
         background: "#ffffff",
