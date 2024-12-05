@@ -77,7 +77,7 @@ const HomeHero = () => {
               {/* Navigation Buttons */}
               <button
                 onClick={handlePrev}
-                className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white/70 text-gray-800 p-2 rounded-full shadow-md hover:bg-white transition"
+                className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[#f1d5a6] text-[#eaa435] p-2 rounded-full shadow-md hover:bg-white transition"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +96,7 @@ const HomeHero = () => {
               </button>
               <button
                 onClick={handleNext}
-                className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white/70 text-gray-800 p-2 rounded-full shadow-md hover:bg-white transition"
+                className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[#f1d5a6] text-[#eaa435] p-2 rounded-full shadow-md hover:bg-white transition"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
