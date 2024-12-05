@@ -17,7 +17,7 @@ const Home: React.FC = () => {
         >
           <div className="carousel-inner">
             {/* Carousel Items */}
-            <div className="carousel-item active">
+            <div className="carousel-item active bg-[#F5EBDA]">
               <Image
                 src="/images/image1.png"
                 className="d-block w-100"

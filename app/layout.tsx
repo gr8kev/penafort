@@ -22,6 +22,28 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <title>PenafortWinery</title>
+        <meta
+          name="description"
+          content="As one of the biggest wine companies in the world, it is our responsibility to make sure our growth is sustainable to our people."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="PenafortWinery" />
+        <meta
+          property="og:title"
+          content="Nature's Elegance - Growing Essence"
+        />
+        <meta
+          property="og:description"
+          content="As one of the biggest wine companies in the world, it is our responsibility to make sure our growth is sustainable to our people."
+        />
+        <meta property="og:image" content="/images/logo.png" />
+        <meta property="og:url" content="https://penafortwinery.com" />
+        <meta
+          name="twitter:card"
+          content="Nature's Elegance - Growing Essence"
+        />
+        <meta name="robots" content="index, follow" />
         <link rel="icon" href="/logo.ico" sizes="any" />
       </head>
       <body>

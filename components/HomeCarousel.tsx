@@ -127,7 +127,7 @@ const Home: React.FC = () => {
             style={{ padding: "0" }} // Remove any extra padding
           >
             <div
-              className="card text-center shadow-sm"
+              className="card text-center shadow-sm  "
               style={{ width: "100%", height: "400px" }} // Full width on mobile
             >
               <Image
