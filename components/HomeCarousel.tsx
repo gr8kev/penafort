@@ -116,8 +116,8 @@ const Home: React.FC = () => {
   const handleDotClick = (index: number) => setCurrentIndex(index);
 
   return (
-    <div className="container my-5 position-relative p-0">
-      <div className="row g-0">
+    <div className="container-fluid my-5 position-relative p-0 ">
+      <div className="row g-0 ">
         {" "}
         {/* Removed g-4 to remove gaps between items */}
         {currentItems.map((wine, index) => (

@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Nature = () => {
   return (
-    <div className="container text-center">
+    <div className="container-fluid text-center">
       <h3
         className="font-opensans text-[#BB6500]"
         style={{ letterSpacing: "0.2em", fontSize: "1.5rem" }}
@@ -17,7 +17,7 @@ const Nature = () => {
         Nature&apos;s Growing Essence
       </h1>
 
-      <div className="row g-4 mt-5 justify-content-center">
+      <div className="row g-4 mt-5 justify-content-center md:px-24">
         {[
           { src: "/images/Square1.png", alt: "Square 1" },
           { src: "/images/square2.png", alt: "Square 2" },

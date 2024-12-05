@@ -3,10 +3,10 @@ import Image from "next/image"; // Assuming you're using Next.js for image optim
 
 export default function About() {
   return (
-    <div className="container mt-5">
-      <div className="row align-items-center justify-content-center">
+    <div className="container-fluid  mt-5">
+      <div className="row align-items-center justify-content-center md:px-24">
         {/* Left Container (Image) */}
-        <div className="col-12 col-lg-6 mb-4 d-flex justify-content-center">
+        <div className="col-12 col-lg-6 mb-4 d-flex justify-content-center ">
           <div
             className="image-container"
             style={{
