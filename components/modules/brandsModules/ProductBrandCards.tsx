@@ -19,7 +19,7 @@ const Home: React.FC = () => {
     {
       src: "/images/bach.png",
       name: "Bach Extrisimo Brut Rosé",
-      price: "₦51,000",
+      price: "₦54,000",
     },
     {
       src: "/images/CodorniuCan2.png",
