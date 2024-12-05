@@ -43,7 +43,7 @@ const Partners = () => {
                   We pride in our brand and in our wine.
                 </p>
                 <div>
-                  <button className="btn-custom btn-primary bg-white text-dark ">
+                  <button className="btn-custom btn-primary bg-white text-dark">
                     Order Now
                   </button>
                 </div>

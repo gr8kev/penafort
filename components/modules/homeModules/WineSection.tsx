@@ -16,7 +16,9 @@ const WineSection = () => {
 
       {/* Button */}
       <div className="d-flex mx-2 text-left justify-content-md-center">
-        <button className="btn-custom btn-primary">See More</button>
+        <button className="btn-custom btn-primary">
+          <a href="/brands">See More</a>
+        </button>
       </div>
     </div>
   );

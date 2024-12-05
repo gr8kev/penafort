@@ -9,6 +9,18 @@
   font-family: "Open Sans", sans-serif;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cinzel", serif;
+}
+a {
+  text-decoration: none;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -64,6 +76,10 @@
   color: #fff !important;
   background-color: #ba2b27 !important;
   transition: 0.5s ease-in !important;
+}
+.btn-custom a {
+  color: #fff !important;
+  text-decoration: none !important;
 }
 .btn-custom:hover {
   background-color: #b63234 !important;
@@ -127,9 +143,8 @@
   }
 
   .container {
-    margin: 0 !important;
-    padding: 0 0 0 10px !important;
     width: 100%;
+    padding: 0 !important;
   }
   .about-image {
     object-fit: cover;
@@ -149,7 +164,6 @@ html {
   font-size: var(--bs-navbar-toggler-font-size);
   line-height: 1;
   color: var(--bs-navbar-color);
-  background-color: #0000;
   border: var(--bs-border-width) solid #b63234 !important;
   border-radius: var(--bs-navbar-toggler-border-radius);
   transition: var(--bs-navbar-toggler-transition);
@@ -169,10 +183,9 @@ html {
 
 /* Prevent the toggle button from shifting */
 .navbar-toggler {
-  position: absolute;
+  position: fixed; /* Change to fixed */
   right: 1rem; /* Adjust as needed */
-  top: 50%;
-  transform: translateY(-50%);
+  top: 1rem; /* Adjust as needed */
   z-index: 1050; /* Keep it above the tray */
 }
 
@@ -254,6 +267,7 @@ html {
 }
 
 html,
-body {
+.body {
   overflow-x: hidden;
+  background: #f5ebda;
 }

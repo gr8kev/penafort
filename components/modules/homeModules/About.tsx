@@ -43,7 +43,9 @@ export default function About() {
               treating yourself, we’ve got the perfect wine for every occasion.
             </div>
             <div>
-              <button className="btn-custom btn-primary mt-5">Read More</button>
+              <button className="btn-custom btn-primary mt-5">
+                <a href="/about">Read More</a>
+              </button>
             </div>
           </div>
         </div>
