@@ -15,6 +15,7 @@
 
 .aboutSection {
   background-color: #F5EBDA;
+  
 
   margin-top: 15px;
   padding: 0;
@@ -26,6 +27,7 @@
   width: 100%;
   background: url("/images/AboutUs2.png") no-repeat center/cover;
   overflow: hidden;
+  margin-top: 80px;
 }
 
 .gradientOverlay {
