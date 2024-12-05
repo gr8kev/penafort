@@ -1,3 +1,8 @@
+
+body{
+    background-color: #F5EBDA;
+}
+
 .contactPage {
     display: flex;
     flex-direction: column;
@@ -8,7 +13,7 @@
     padding: 2rem 1rem;
     box-sizing: border-box;
     margin-top: 78px;
-
+   
   }
   
   .container {
@@ -138,7 +143,7 @@
   
   .redBackground {
     margin-top: 15px;
-    background-color: #F5EBDA;
+    background-color: #ba2b27;
     padding: 1.7rem;
     color: white;
     border-radius: 10px;
@@ -161,7 +166,7 @@
     font-size: 1.8rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    color: #ba2b27;
+    color: #fff;
   }
   
   .contentButtons {

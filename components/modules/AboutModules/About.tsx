@@ -72,7 +72,7 @@ const About = () => {
             </h3>
             <button className={styles.orderButton}>Order Now</button>
           </div>
-          <div className={styles.imageWrapper}>
+          <div className={`${styles.imageWrapper} bg-[#F5EBDA]`}>
             <Image
               src="/images/penafortbg.jpeg" // Replace this with your actual image path
               alt="Wine glass with grapes"
@@ -81,6 +81,7 @@ const About = () => {
               height={150} // Reduced height
             />
           </div>
+        
         </div>
       </section>
     </div>

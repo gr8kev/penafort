@@ -56,16 +56,17 @@ const Home: React.FC = () => {
               />
               {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/20 to-transparent"></div>
-            </div>
-
-            {/* Hero Text */}
-            <div className="absolute top-1/2 left-4 sm:left-6 lg:left-10 transform -translate-y-1/2 z-10 text-white max-w-[90%] md:max-w-md">
+                 {/* Hero Text */}
+            <div className="absolute top-1/2 left-4 sm:left-6 lg:left-12 transform -translate-y-1/2 z-10 text-white max-w-[90%] md:max-w-full">
               <h1 className="text-xl sm:text-[14px] md:text-4xl font-cinzel leading-relaxed text-left">
                 <span className="block mb-2">You&apos;ve got the</span>
                 <span className="block mb-2">desire, we&apos;ve got</span>
                 <span className="block">the wine!</span>
               </h1>
             </div>
+            </div>
+
+         
           </div>
         </div>
       </div>
