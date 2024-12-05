@@ -84,7 +84,7 @@ const Contact = () => {
         {/* Right Section */}
       
         <div className={styles.right}>
-        <div className="hidden sm:block bg-[#ba2b27] w-1/2 h-12 rounded-sm mt-2 relative left-[130px]"></div>
+        <div className="hidden sm:block bg-[#ba2b27] w-1/2 h-12 rounded-sm  relative left-[135px]"></div>
 
 
 
@@ -101,7 +101,7 @@ const Contact = () => {
     className={styles.map}
   />
 </div>
-<div className="hidden sm:block bg-[#ba2b27] w-1/2 h-12 rounded-sm mt-[-15px] relative left-[130px]"></div>
+<div className="hidden sm:block bg-[#ba2b27] w-1/2 h-12 rounded-sm mt-[-15px] relative left-[135px]"></div>
         </div>
       </div>
 
