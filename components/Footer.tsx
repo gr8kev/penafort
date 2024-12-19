@@ -159,7 +159,7 @@ const Footer = () => {
               style={{ fontSize: "13px", fontWeight: "400" }}
               className="text-black"
             >
-              Wine testing in all outlets
+              Wine tasting in all outlets
             </p>
           </div>
         </div>
