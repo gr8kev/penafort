@@ -29,9 +29,11 @@ export default function RootLayout({
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="author" content="PenafortWinery" />
+
+        {/* Open Graph meta tags for social media sharing */}
         <meta
           property="og:title"
-          content="Nature's Elegance - Growing Essence"
+          content="Penafort Winery, wine, sustainable wine production, fine wines, premium "
         />
         <meta
           property="og:description"
@@ -39,13 +41,25 @@ export default function RootLayout({
         />
         <meta property="og:image" content="/images/logo.png" />
         <meta property="og:url" content="https://penafortwinery.com" />
+
+        {/* Twitter card meta tags  */}
         <meta
           name="twitter:card"
-          content="Nature's Elegance - Growing Essence"
+          content="Penafort Winery, wine, sustainable wine production, fine wines, premium "
         />
+
+        {/* <!-- SEO meta tags for search engines --> */}
         <meta name="robots" content="index, follow" />
+
+        {/* <!-- Meta keywords tag --> */}
+        <meta
+          name="keywords"
+          content="Penafort Winery, wine, sustainable wine production, fine wines, premium wines, wine company, vineyard, wine tasting, eco-friendly wines, award-winning wines"
+        />
+
         <link rel="icon" href="/logo.ico" sizes="any" />
       </head>
+
       <body>
         <main className={Opensans.className}>
           <Header />
