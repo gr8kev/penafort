@@ -24,6 +24,12 @@ export const Header = () => {
     };
   }, []);
 
+  const handleNavClick = () => {
+    // Ensure the navbar stays white until the page transitions
+    setExpanded(false);
+    setScrolled(true);
+  };
+
   return (
     <div>
       <Navbar
@@ -59,22 +65,22 @@ export const Header = () => {
             className={`justify-content-end ${expanded ? "bg-white" : ""}`}
           >
             <Nav className="ms-auto links">
-              <Nav.Link href="/" onClick={() => setExpanded(false)}>
+              <Nav.Link href="/" onClick={handleNavClick}>
                 Home
               </Nav.Link>
-              <Nav.Link href="/about" onClick={() => setExpanded(false)}>
+              <Nav.Link href="/about" onClick={handleNavClick}>
                 About
               </Nav.Link>
-              <Nav.Link href="/brands" onClick={() => setExpanded(false)}>
+              <Nav.Link href="/brands" onClick={handleNavClick}>
                 Brands
               </Nav.Link>
-              <Nav.Link href="/contact" onClick={() => setExpanded(false)}>
+              <Nav.Link href="/contact" onClick={handleNavClick}>
                 Contact
               </Nav.Link>
               <Nav.Link
                 href="/login"
                 className="btn-custom btn-primary"
-                onClick={() => setExpanded(false)}
+                onClick={handleNavClick}
               >
                 Login
               </Nav.Link>
