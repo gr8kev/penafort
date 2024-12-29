@@ -44,6 +44,23 @@ const SignUp = () => {
     router.push("/");
   };
 
+  // Function to validate password
+  const validatePassword = (password: string): string | null => {
+    if (password.length < 8)
+      return "Password must be at least 8 characters long";
+    if (!/[A-Z]/.test(password))
+      return "Password must include at least one uppercase letter";
+    if (!/\d/.test(password))
+      return "Password must include at least one number";
+    return null;
+  };
+
+  // Function to validate phone number
+  const validatePhoneNumber = (phoneNumber: string): boolean => {
+    const phoneRegex = /^\+?[1-9]\d{1,14}$/; // E.164 format
+    return phoneRegex.test(phoneNumber);
+  };
+
   // Function to check if email already exists
   interface CheckEmailResponse {
     exists: boolean;
@@ -62,25 +79,45 @@ const SignUp = () => {
     }
   };
 
+  // Function to determine form validity
+  const isFormValid = (): boolean => {
+    const passwordValid = validatePassword(formData.password) === null;
+    const phoneValid = validatePhoneNumber(formData.phoneNumber);
+    const passwordsMatch = formData.password === formData.confirmPassword;
+
+    return (
+      Boolean(formData.firstName) &&
+      Boolean(formData.lastName) &&
+      Boolean(formData.email) &&
+      phoneValid &&
+      passwordValid &&
+      passwordsMatch
+    );
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Prevent further submissions while email check is ongoing
-    if (isSubmitting) {
-      return;
-    }
+    if (isSubmitting) return;
     setIsSubmitting(true);
 
-    // Clear previous toasts to avoid stacking
     toast.dismiss();
 
-    if (formData.password !== formData.confirmPassword) {
-      toast.error("Passwords do not match");
+    // Check passwords
+    const passwordError = validatePassword(formData.password);
+    if (passwordError) {
+      toast.error(passwordError);
       setIsSubmitting(false);
       return;
     }
 
-    // Debounce email check to avoid unnecessary requests
+    if (!validatePhoneNumber(formData.phoneNumber)) {
+      toast.error("Invalid phone number format");
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Debounce email check
     if (emailCheckTimeout.current) {
       clearTimeout(emailCheckTimeout.current);
     }
@@ -93,7 +130,6 @@ const SignUp = () => {
         return;
       }
 
-      // Proceed with the registration if the email is not taken
       try {
         const payload = new URLSearchParams();
         payload.append("first_name", formData.firstName);
@@ -105,7 +141,7 @@ const SignUp = () => {
 
         const response = await axios.post(
           `${process.env.NEXT_PUBLIC_API_BASE_URL}/register`,
-          payload, // Sending as URLSearchParams
+          payload,
           {
             headers: {
               "Content-Type": "application/x-www-form-urlencoded",
@@ -120,11 +156,16 @@ const SignUp = () => {
           toast.error("An error occurred. Please try again.");
         }
       } catch (err) {
-        console.error("Error:", err);
-        toast.error("There was an issue with the API request.");
+        if (axios.isAxiosError(err)) {
+          const backendError =
+            err.response?.data?.detail || "API Error occurred.";
+          toast.error(backendError);
+        } else {
+          toast.error("Unexpected error. Please try again.");
+        }
       }
       setIsSubmitting(false);
-    }, 500); // Debounce delay of 500ms
+    }, 500);
   };
 
   return (
@@ -224,7 +265,11 @@ const SignUp = () => {
               <Link href="/privacy-policies">Privacy Policies</Link>.
             </label>
           </div>
-          <button type="submit" className="signup-btn" disabled={isSubmitting}>
+          <button
+            type="submit"
+            className="signup-btn"
+            disabled={isSubmitting || !isFormValid()}
+          >
             {isSubmitting ? "Creating..." : "Create account"}
           </button>
         </form>
