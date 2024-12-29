@@ -20,15 +20,24 @@ const SignUp = () => {
     confirmPassword: "",
   });
 
-  const [isSubmitting, setIsSubmitting] = useState(false); // Flag to prevent multiple submissions
-  const emailCheckTimeout = useRef<NodeJS.Timeout | null>(null); // Ref to debounce the email check
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const emailCheckTimeout = useRef<NodeJS.Timeout | null>(null);
 
-  const handleChange = (e) => {
+  interface FormData {
+    firstName: string;
+    lastName: string;
+    email: string;
+    phoneNumber: string;
+    password: string;
+    confirmPassword: string;
+  }
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
+    setFormData((prevFormData: FormData) => ({
+      ...prevFormData,
       [name]: value,
-    });
+    }));
   };
 
   const handleClose = () => {
@@ -46,7 +55,7 @@ const SignUp = () => {
         `${process.env.NEXT_PUBLIC_API_BASE_URL}/check-email`,
         { params: { email } }
       );
-      return response.data.exists; // Assuming the response contains a field 'exists' (true/false)
+      return response.data.exists;
     } catch (err) {
       console.error("Error checking email:", err);
       return false;

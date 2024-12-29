@@ -1,21 +1,25 @@
-import React, { useState, useEffect } from "react";
+"use client";
+
+import React, { useState, useEffect, useContext } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Image from "react-bootstrap/Image";
+import { AuthContext } from "@/components/authContext";
+import { useRouter } from "next/navigation";
 
 export const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [expanded, setExpanded] = useState(false);
+  const authContext = useContext(AuthContext);
+  const user = authContext?.user;
+  const logout = authContext?.logout;
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
-      if (offset > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(offset > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -25,9 +29,15 @@ export const Header = () => {
   }, []);
 
   const handleNavClick = () => {
-    // Ensure the navbar stays white until the page transitions
     setExpanded(false);
     setScrolled(true);
+  };
+
+  const handleLogout = () => {
+    if (logout) {
+      logout(); // Clear user session
+    }
+    router.push("/login"); // Redirect to login page
   };
 
   return (
@@ -40,7 +50,6 @@ export const Header = () => {
         }`}
       >
         <Container>
-          {/* Logo Image */}
           <Navbar.Brand href="/">
             <Image
               src="/images/logo.png"
@@ -52,14 +61,12 @@ export const Header = () => {
             />
           </Navbar.Brand>
 
-          {/* Navbar Toggle */}
           <Navbar.Toggle
             aria-controls="basic-navbar-nav"
             className="toggle-right"
             onClick={() => setExpanded(expanded ? false : true)}
           />
 
-          {/* Navbar Collapse */}
           <Navbar.Collapse
             id="basic-navbar-nav"
             className={`justify-content-end ${expanded ? "bg-white" : ""}`}
@@ -77,13 +84,22 @@ export const Header = () => {
               <Nav.Link href="/contact" onClick={handleNavClick}>
                 Contact
               </Nav.Link>
-              <Nav.Link
-                href="/login"
-                className="btn-custom btn-primary"
-                onClick={handleNavClick}
-              >
-                Login
-              </Nav.Link>
+              {user ? ( // Check if the user is logged in
+                <Nav.Link
+                  onClick={handleLogout}
+                  className="btn-custom btn-primary"
+                >
+                  Logout
+                </Nav.Link>
+              ) : (
+                <Nav.Link
+                  href="/login"
+                  className="btn-custom btn-primary"
+                  onClick={handleNavClick}
+                >
+                  Login
+                </Nav.Link>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

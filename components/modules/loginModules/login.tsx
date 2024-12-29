@@ -1,35 +1,44 @@
 "use client"; // Add this directive for Client Components
 
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation"; // Import useRouter from next/navigation
-import axios from "axios"; // Import axios for API calls
+import { useRouter } from "next/navigation";
+import axios from "axios";
 import "./login.css";
 import { FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa6";
-import { ToastContainer, toast } from "react-toastify"; // Import toast
+import { ToastContainer, toast } from "react-toastify";
+import { AuthContext } from "@/components/authContext";
 
 const Login: React.FC = () => {
-  const router = useRouter(); // Initialize the router
-  const [email, setEmail] = useState(""); // State for email
-  const [password, setPassword] = useState(""); // State for password
-  const [error, setError] = useState<string | null>(null); // State for error handling
+  const router = useRouter();
+  const authContext = useContext(AuthContext); // Access auth context
+  if (!authContext) {
+    throw new Error("AuthContext must be used within an AuthProvider");
+  }
+  const { setUser } = authContext;
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false); // State to handle button loading
 
   // Function to handle login form submission
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    try {
-      // Prepare data for API call
-      const data = new URLSearchParams();
-      data.append("email", email);
-      data.append("password", password);
+    setLoading(true); // Set loading to true when login starts
+    setError(null); // Reset error
 
-      // API call
+    try {
+      // Prepare data for x-www-form-urlencoded format
+      const formData = new URLSearchParams();
+      formData.append("email", email);
+      formData.append("password", password);
+
       const response = await axios.post(
         `${process.env.NEXT_PUBLIC_API_BASE_URL}/login`,
-        data,
+        formData, // Send the form data as application/x-www-form-urlencoded
         {
           headers: {
             "Content-Type": "application/x-www-form-urlencoded",
@@ -39,20 +48,50 @@ const Login: React.FC = () => {
       );
 
       if (response.status === 200) {
-        console.log("Login successful:", response.data);
+        const { token, user } = response.data;
+
+        // Save token to localStorage
+        localStorage.setItem("token", token);
+
+        // Update user state in context
+        setUser(user);
+
         toast.success("Login successful!"); // Show success toast
         router.push("/"); // Navigate to home page
       }
-    } catch (err) {
+    } catch (err: unknown) {
+      setError("An error occurred. Please try again."); // Default error message
+
+      // Log error to console for debugging
       console.error("Login error:", err);
-      setError("Invalid email or password. Please try again.");
-      toast.error("Invalid email or password. Please try again."); // Show error toast
+
+      // Display more specific error message based on the response
+      if (axios.isAxiosError(err) && err.response) {
+        console.error("Error details:", err.response.data); // Log server response
+
+        if (err.response.status === 422) {
+          // Handle the 422 error specifically
+          toast.error(
+            "Invalid input. Please check your email and password format."
+          );
+        } else {
+          toast.error(err.response?.data?.message || "An error occurred.");
+        }
+      } else {
+        toast.error("Network error. Please check your connection.");
+      }
+      // Show error toast with message
+      toast.error(
+        (axios.isAxiosError(err) && err.response?.data?.message) ||
+          "Invalid email or password. Please try again."
+      );
+    } finally {
+      setLoading(false); // Set loading to false after completion
     }
   };
 
-  // Function to handle the close button click
   const handleClose = () => {
-    router.push("/"); // Navigate back to the home page
+    router.push("/");
   };
 
   return (
@@ -108,8 +147,12 @@ const Login: React.FC = () => {
               Forgot Password?
             </a>
           </div>
-          <button type="submit" className="login-btn">
-            Login
+          <button
+            type="submit"
+            className="login-btn"
+            disabled={loading} // Disable button while loading
+          >
+            {loading ? "Logging in..." : "Login"} {/* Change button text */}
           </button>
         </form>
         <div className="signup-option">

@@ -8,6 +8,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { Open_Sans } from "next/font/google";
 import { Header } from "@/components/Header";
+import { AuthProvider } from "@/components/authContext";
 
 const Opensans = Open_Sans({
   weight: ["400", "500", "600", "700"],
@@ -22,19 +23,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>PenafortWinery</title>
+        <title>Penafort Winery</title>
         <meta
           name="description"
           content="As one of the biggest wine companies in the world, it is our responsibility to make sure our growth is sustainable to our people."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="author" content="PenafortWinery" />
+        <meta name="author" content="Penafort Winery" />
 
-        {/* Open Graph meta tags for social media sharing */}
-        <meta
-          property="og:title"
-          content="Penafort Winery, wine, sustainable wine production, fine wines, premium "
-        />
+        {/* Open Graph meta tags */}
+        <meta property="og:title" content="Penafort Winery | Fine Wines" />
         <meta
           property="og:description"
           content="As one of the biggest wine companies in the world, it is our responsibility to make sure our growth is sustainable to our people."
@@ -42,31 +40,34 @@ export default function RootLayout({
         <meta property="og:image" content="/images/logo.png" />
         <meta property="og:url" content="https://penafortwinery.com" />
 
-        {/* Twitter card meta tags  */}
+        {/* Twitter card meta tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Penafort Winery" />
         <meta
-          name="twitter:card"
-          content="Penafort Winery, wine, sustainable wine production, fine wines, premium "
+          name="twitter:description"
+          content="Fine wines and sustainable growth."
         />
+        <meta name="twitter:image" content="/images/logo.png" />
 
-        {/* <!-- SEO meta tags for search engines --> */}
+        {/* SEO meta tags */}
         <meta name="robots" content="index, follow" />
-
-        {/* <!-- Meta keywords tag --> */}
         <meta
           name="keywords"
-          content="Penafort Winery, wine, sustainable wine production, fine wines, premium wines, wine company, vineyard, wine tasting, eco-friendly wines, award-winning wines"
+          content="Penafort Winery, wine, sustainable wine production, fine wines, premium wines, vineyard, wine tasting, eco-friendly wines, award-winning wines"
         />
 
         <link rel="icon" href="/logo.ico" sizes="any" />
       </head>
 
       <body>
-        <main className={Opensans.className}>
-          <Header />
-          {children}
-          <Footer />
-          <BootstrapJS />
-        </main>
+        <AuthProvider>
+          <main className={Opensans.className}>
+            <Header />
+            {children}
+            <Footer />
+            <BootstrapJS />
+          </main>
+        </AuthProvider>
       </body>
     </html>
   );
