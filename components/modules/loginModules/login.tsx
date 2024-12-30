@@ -11,6 +11,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa6";
 import { ToastContainer, toast } from "react-toastify";
 import { AuthContext } from "@/components/authContext";
+import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import eye icons
 
 const Login: React.FC = () => {
   const router = useRouter();
@@ -21,6 +22,7 @@ const Login: React.FC = () => {
   const { setUser } = authContext;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false); // State for password visibility
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false); // State to handle button loading
 
@@ -126,14 +128,18 @@ const Login: React.FC = () => {
           <label>Password</label>
           <div className="password-wrapper">
             <input
-              type="password"
+              type={showPassword ? "text" : "password"} // Toggle input type
               placeholder="********"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-            <button type="button" className="toggle-password">
-              <span>&#128065;</span>
+            <button
+              type="button"
+              className="toggle-password"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? <FaEyeSlash /> : <FaEye />} {/* Eye icons */}
             </button>
           </div>
           <div className="options">

@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ToastContainer, toast } from "react-toastify"; // Import ToastContainer and toast
-import "react-toastify/dist/ReactToastify.css"; // Import toastify CSS
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import icons
 import "./signup.css";
 
 const SignUp = () => {
@@ -21,20 +22,12 @@ const SignUp = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const emailCheckTimeout = useRef<NodeJS.Timeout | null>(null);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-  interface FormData {
-    firstName: string;
-    lastName: string;
-    email: string;
-    phoneNumber: string;
-    password: string;
-    confirmPassword: string;
-  }
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData((prevFormData: FormData) => ({
+    setFormData((prevFormData) => ({
       ...prevFormData,
       [name]: value,
     }));
@@ -44,128 +37,59 @@ const SignUp = () => {
     router.push("/");
   };
 
-  // Function to validate password
-  const validatePassword = (password: string): string | null => {
-    if (password.length < 8)
-      return "Password must be at least 8 characters long";
-    if (!/[A-Z]/.test(password))
-      return "Password must include at least one uppercase letter";
-    if (!/\d/.test(password))
-      return "Password must include at least one number";
-    return null;
-  };
-
-  // Function to validate phone number
-  const validatePhoneNumber = (phoneNumber: string): boolean => {
-    const phoneRegex = /^\+?[1-9]\d{1,14}$/; // E.164 format
-    return phoneRegex.test(phoneNumber);
-  };
-
-  // Function to check if email already exists
-  interface CheckEmailResponse {
-    exists: boolean;
-  }
-
-  const checkIfEmailExists = async (email: string): Promise<boolean> => {
-    try {
-      const response = await axios.get<CheckEmailResponse>(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/check-email`,
-        { params: { email } }
-      );
-      return response.data.exists;
-    } catch (err) {
-      console.error("Error checking email:", err);
-      return false;
-    }
-  };
-
-  // Function to determine form validity
-  const isFormValid = (): boolean => {
-    const passwordValid = validatePassword(formData.password) === null;
-    const phoneValid = validatePhoneNumber(formData.phoneNumber);
-    const passwordsMatch = formData.password === formData.confirmPassword;
-
-    return (
-      Boolean(formData.firstName) &&
-      Boolean(formData.lastName) &&
-      Boolean(formData.email) &&
-      phoneValid &&
-      passwordValid &&
-      passwordsMatch
-    );
+  const validatePassword = (password: string): boolean => {
+    const passwordRegex = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
+    return passwordRegex.test(password);
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     if (isSubmitting) return;
+
+    // Frontend validations
+    if (!validatePassword(formData.password)) {
+      toast.error(
+        "Password must be at least 8 characters long, include at least one uppercase letter and one number."
+      );
+      return;
+    }
+    if (formData.password !== formData.confirmPassword) {
+      toast.error("Passwords do not match.");
+      return;
+    }
+
     setIsSubmitting(true);
+    try {
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/register`,
+        {
+          first_name: formData.firstName,
+          last_name: formData.lastName,
+          email: formData.email,
+          phone_number: formData.phoneNumber,
+          password: formData.password,
+          confirm_password: formData.confirmPassword,
+        },
+        {
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        }
+      );
 
-    toast.dismiss();
-
-    // Check passwords
-    const passwordError = validatePassword(formData.password);
-    if (passwordError) {
-      toast.error(passwordError);
-      setIsSubmitting(false);
-      return;
-    }
-
-    if (!validatePhoneNumber(formData.phoneNumber)) {
-      toast.error("Invalid phone number format");
-      setIsSubmitting(false);
-      return;
-    }
-
-    // Debounce email check
-    if (emailCheckTimeout.current) {
-      clearTimeout(emailCheckTimeout.current);
-    }
-
-    emailCheckTimeout.current = setTimeout(async () => {
-      const emailExists = await checkIfEmailExists(formData.email);
-      if (emailExists) {
-        toast.error("Email already exists, please sign in.");
-        setIsSubmitting(false);
-        return;
+      if (response.status === 200) {
+        toast.success("Account created successfully!");
+        setTimeout(() => router.push("/login"), 2000);
       }
-
-      try {
-        const payload = new URLSearchParams();
-        payload.append("first_name", formData.firstName);
-        payload.append("last_name", formData.lastName);
-        payload.append("email", formData.email);
-        payload.append("phone_number", formData.phoneNumber);
-        payload.append("password", formData.password);
-        payload.append("confirm_password", formData.confirmPassword);
-
-        const response = await axios.post(
-          `${process.env.NEXT_PUBLIC_API_BASE_URL}/register`,
-          payload,
-          {
-            headers: {
-              "Content-Type": "application/x-www-form-urlencoded",
-            },
-          }
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        toast.error(
+          error.response?.data?.detail || "An error occurred. Please try again."
         );
-
-        if (response.data.message) {
-          toast.success("Account created successfully!");
-          setTimeout(() => router.push("/login"), 2000);
-        } else {
-          toast.error("An error occurred. Please try again.");
-        }
-      } catch (err) {
-        if (axios.isAxiosError(err)) {
-          const backendError =
-            err.response?.data?.detail || "API Error occurred.";
-          toast.error(backendError);
-        } else {
-          toast.error("Unexpected error. Please try again.");
-        }
+      } else {
+        toast.error("Unexpected error. Please try again.");
       }
+    } finally {
       setIsSubmitting(false);
-    }, 500);
+    }
   };
 
   return (
@@ -237,26 +161,40 @@ const SignUp = () => {
             </div>
           </div>
           <label>Password:</label>
-          <div className="password-wrapper">
+          <div className="password-container">
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               name="password"
               placeholder="********"
               value={formData.password}
               onChange={handleChange}
               required
             />
+            <button
+              type="button"
+              className="toggle-password"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </button>
           </div>
           <label>Confirm Password:</label>
-          <div className="password-wrapper">
+          <div className="password-container">
             <input
-              type="password"
+              type={showConfirmPassword ? "text" : "password"}
               name="confirmPassword"
               placeholder="********"
               value={formData.confirmPassword}
               onChange={handleChange}
               required
             />
+            <button
+              type="button"
+              className="toggle-password"
+              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+            >
+              {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
+            </button>
           </div>
           <div className="terms-row">
             <input type="checkbox" required className="checkbox" />
@@ -265,11 +203,7 @@ const SignUp = () => {
               <Link href="/privacy-policies">Privacy Policies</Link>.
             </label>
           </div>
-          <button
-            type="submit"
-            className="signup-btn"
-            disabled={isSubmitting || !isFormValid()}
-          >
+          <button type="submit" className="signup-btn" disabled={isSubmitting}>
             {isSubmitting ? "Creating..." : "Create account"}
           </button>
         </form>
@@ -279,7 +213,6 @@ const SignUp = () => {
           </p>
         </div>
       </div>
-      {/* Toast container */}
       <ToastContainer />
     </div>
   );
