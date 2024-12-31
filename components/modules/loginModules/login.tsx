@@ -15,22 +15,22 @@ import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import eye icons
 
 const Login: React.FC = () => {
   const router = useRouter();
-  const authContext = useContext(AuthContext); // Access auth context
+  const authContext = useContext(AuthContext);
   if (!authContext) {
     throw new Error("AuthContext must be used within an AuthProvider");
   }
   const { setUser } = authContext;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false); // State for password visibility
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState(false); // State to handle button loading
+  const [loading, setLoading] = useState(false);
 
   // Function to handle login form submission
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true); // Set loading to true when login starts
-    setError(null); // Reset error
+    setLoading(true);
+    setError(null);
 
     try {
       // Prepare data for x-www-form-urlencoded format
@@ -39,8 +39,8 @@ const Login: React.FC = () => {
       formData.append("password", password);
 
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/login`,
-        formData, // Send the form data as application/x-www-form-urlencoded
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/login`,
+        formData,
         {
           headers: {
             "Content-Type": "application/x-www-form-urlencoded",
@@ -52,27 +52,22 @@ const Login: React.FC = () => {
       if (response.status === 200) {
         const { token, user } = response.data;
 
-        // Save token to localStorage
         localStorage.setItem("token", token);
 
-        // Update user state in context
         setUser(user);
 
-        toast.success("Login successful!"); // Show success toast
-        router.push("/"); // Navigate to home page
+        toast.success("Login successful!");
+        router.push("/");
       }
     } catch (err: unknown) {
-      setError("An error occurred. Please try again."); // Default error message
+      setError("An error occurred. Please try again.");
 
-      // Log error to console for debugging
       console.error("Login error:", err);
 
-      // Display more specific error message based on the response
       if (axios.isAxiosError(err) && err.response) {
-        console.error("Error details:", err.response.data); // Log server response
+        console.error("Error details:", err.response.data);
 
         if (err.response.status === 422) {
-          // Handle the 422 error specifically
           toast.error(
             "Invalid input. Please check your email and password format."
           );
@@ -82,13 +77,13 @@ const Login: React.FC = () => {
       } else {
         toast.error("Network error. Please check your connection.");
       }
-      // Show error toast with message
+
       toast.error(
         (axios.isAxiosError(err) && err.response?.data?.message) ||
           "Invalid email or password. Please try again."
       );
     } finally {
-      setLoading(false); // Set loading to false after completion
+      setLoading(false);
     }
   };
 
@@ -139,7 +134,7 @@ const Login: React.FC = () => {
               className="toggle-password"
               onClick={() => setShowPassword(!showPassword)}
             >
-              {showPassword ? <FaEyeSlash /> : <FaEye />} {/* Eye icons */}
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
             </button>
           </div>
           <div className="options">
@@ -153,12 +148,8 @@ const Login: React.FC = () => {
               Forgot Password?
             </a>
           </div>
-          <button
-            type="submit"
-            className="login-btn"
-            disabled={loading} // Disable button while loading
-          >
-            {loading ? "Logging in..." : "Login"} {/* Change button text */}
+          <button type="submit" className="login-btn" disabled={loading}>
+            {loading ? "Logging in..." : "Login"}
           </button>
         </form>
         <div className="signup-option">

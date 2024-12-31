@@ -59,17 +59,20 @@ const SignUp = () => {
     }
 
     setIsSubmitting(true);
+
+    // Prepare the data to be sent in x-www-form-urlencoded format
+    const formDataToSend = new URLSearchParams();
+    formDataToSend.append("first_name", formData.firstName);
+    formDataToSend.append("last_name", formData.lastName);
+    formDataToSend.append("email", formData.email);
+    formDataToSend.append("phone_number", formData.phoneNumber);
+    formDataToSend.append("password", formData.password);
+    formDataToSend.append("confirm_password", formData.confirmPassword);
+
     try {
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/register`,
-        {
-          first_name: formData.firstName,
-          last_name: formData.lastName,
-          email: formData.email,
-          phone_number: formData.phoneNumber,
-          password: formData.password,
-          confirm_password: formData.confirmPassword,
-        },
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/register`,
+        formDataToSend,
         {
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
         }
