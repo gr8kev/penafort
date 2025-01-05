@@ -1,39 +1,36 @@
-"use client"; // Add this directive for Client Components
+"use client";
 
 import React, { useState, useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import { AuthContext } from "@/components/authContext"; // Import AuthContext
 import "./login.css";
 import { FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa6";
 import { ToastContainer, toast } from "react-toastify";
-import { AuthContext } from "@/components/authContext";
 import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import eye icons
 
 const Login: React.FC = () => {
+  const authContext = useContext(AuthContext) as unknown as {
+    setToken: (token: string) => void;
+  };
+  const { setToken } = authContext || {}; // Safely access setToken
   const router = useRouter();
-  const authContext = useContext(AuthContext);
-  if (!authContext) {
-    throw new Error("AuthContext must be used within an AuthProvider");
-  }
-  const { setUser } = authContext;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
-  // Function to handle login form submission
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError(null);
 
     try {
-      // Prepare data for x-www-form-urlencoded format
       const formData = new URLSearchParams();
       formData.append("email", email);
       formData.append("password", password);
@@ -50,18 +47,20 @@ const Login: React.FC = () => {
       );
 
       if (response.status === 200) {
-        const { token, user } = response.data;
+        const { token } = response.data;
 
         localStorage.setItem("token", token);
 
-        setUser(user);
+        // Safely update context
+        if (setToken) {
+          setToken(token);
+        }
 
         toast.success("Login successful!");
         router.push("/");
       }
     } catch (err: unknown) {
       setError("An error occurred. Please try again.");
-
       console.error("Login error:", err);
 
       if (axios.isAxiosError(err) && err.response) {
@@ -123,7 +122,7 @@ const Login: React.FC = () => {
           <label>Password</label>
           <div className="password-wrapper">
             <input
-              type={showPassword ? "text" : "password"} // Toggle input type
+              type={showPassword ? "text" : "password"}
               placeholder="********"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -160,20 +159,19 @@ const Login: React.FC = () => {
         <div className="social-login">
           <p>Or login with</p>
           <div className="social-icons">
-            <button className="social-btn facebook">
+            <button className="social-btn facebook" title="Login with Facebook">
               <FaFacebook size={22} />
             </button>
-            <button className="social-btn google">
+            <button className="social-btn google" title="Login with Google">
               <FcGoogle size={22} />
             </button>
-            <button className="social-btn apple">
+            <button className="social-btn apple" title="Login with Apple">
               <FaApple size={22} />
             </button>
           </div>
         </div>
       </div>
 
-      {/* Toast container */}
       <ToastContainer position="top-center" autoClose={5000} hideProgressBar />
     </div>
   );

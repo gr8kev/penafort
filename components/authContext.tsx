@@ -1,59 +1,67 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
-
-interface User {
-  email: string | null;
-  // Add more fields as needed
-}
+import React, { createContext, useState, useEffect } from "react";
 
 interface AuthContextType {
-  isLoggedIn: boolean;
-  user: User | null;
-  login: (email: string) => void;
+  token: string | null;
+  setToken: (token: string | null) => void;
   logout: () => void;
-  setUser: (user: User | null) => void;
+  clearToken: () => void;
 }
 
-export const AuthContext = createContext<AuthContextType | undefined>(
-  undefined
-);
+const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [user, setUser] = useState<User | null>(null);
+interface AuthProviderProps {
+  children: React.ReactNode;
+}
+
+export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
+  const [token, setToken] = useState<string | null>(null);
 
   useEffect(() => {
-    const storedEmail = localStorage.getItem("loggedInEmail");
-    if (storedEmail) {
-      setIsLoggedIn(true);
-      setUser({ email: storedEmail });
+    // Ensures that localStorage is only accessed on the client side (browser)
+    if (typeof window !== "undefined") {
+      const storedToken = localStorage.getItem("token");
+      setToken(storedToken);
     }
   }, []);
 
-  const login = (email: string) => {
-    setIsLoggedIn(true);
-    setUser({ email });
-    localStorage.setItem("loggedInEmail", email);
+  const clearToken = () => {
+    if (typeof window !== "undefined") {
+      localStorage.removeItem("token");
+    }
+    setToken(null);
   };
 
   const logout = () => {
-    if (window.confirm("Are you sure you want to log out?")) {
-      setIsLoggedIn(false);
-      setUser(null);
-      localStorage.removeItem("loggedInEmail");
+    if (!token) {
+      return;
     }
+    // Clear the token locally
+    clearToken();
+  };
+
+  const handleSetToken = (newToken: string | null) => {
+    if (typeof window !== "undefined") {
+      if (newToken) {
+        localStorage.setItem("token", newToken);
+      } else {
+        localStorage.removeItem("token");
+      }
+    }
+    setToken(newToken);
   };
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, user, login, logout, setUser }}>
+    <AuthContext.Provider
+      value={{
+        token,
+        setToken: handleSetToken,
+        clearToken,
+        logout,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );
 };
 
-export const useAuth = () => {
-  const context = useContext(AuthContext);
-  if (!context) throw new Error("useAuth must be used within an AuthProvider");
-  return context;
-};
+export { AuthContext };
